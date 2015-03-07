@@ -15,14 +15,6 @@ module.exports = Controller("Home/BaseController", function(){
         courses:courses
       })
       this.display();
-    },
-
-    courseAction: function(){
-      this.display();
-    },
-
-    partnerAction: function(){
-      this.display();
     }
   };
 });
