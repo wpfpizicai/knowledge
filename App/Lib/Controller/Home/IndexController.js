@@ -12,7 +12,8 @@ module.exports = Controller("Home/BaseController", function(){
       this.assign({
         navLinks : navLinks,
         title : "首页",
-        courses:courses
+        courses:courses,
+        controller : 'home'
       })
       this.display();
     }
