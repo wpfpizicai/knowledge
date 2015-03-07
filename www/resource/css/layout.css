@@ -1,3 +1,7 @@
+nav-header{
+  height: 51px;
+  overflow: hidden;
+}
 .navbar-header .navbar-brand{
   padding:0;
 }
@@ -123,7 +127,7 @@
   display: none;
   width: 176px;
   height: 210px;
-  background: url(../images/idx-btm.png)no-repeat 0 0;
+  background: url(../img/idx-btm.png)no-repeat 0 0;
   left: -72px;
   bottom: 11px;
 }
