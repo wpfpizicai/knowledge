@@ -13,7 +13,7 @@ module.exports = Controller("Home/BaseController", function(){
         navLinks : navLinks,
         title : "首页",
         courses:courses,
-        controller : 'home'
+        section : 'home'
       })
       this.display();
     }

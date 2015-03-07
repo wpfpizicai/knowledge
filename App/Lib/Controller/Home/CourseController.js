@@ -7,7 +7,7 @@ module.exports = Controller("Home/BaseController", function(){
   return {
     indexAction: function(){
       this.display({
-        controller : 'course',
+        section : 'course',
         navLinks : navLinks,
         title : "课程"
       });
