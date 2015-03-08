@@ -89,7 +89,7 @@
   height: 170px;
   overflow: hidden;
 }
-.ad-courses .thumbnail .course-img a{
+.ad-courses .thumbnail a{
   display: inline-block;
 }
 .ad-courses .thumbnail img{
