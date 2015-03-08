@@ -40,7 +40,6 @@ define(function(require, exports, moudle) {
         </form>
       </div>
     </div>
-    <div class="modal-backdrop fade in"></div>
     */
   };
 
@@ -80,7 +79,6 @@ define(function(require, exports, moudle) {
         </div>
       </div>
     </div>
-    <div class="modal-backdrop fade in"></div>
     */
   };
 
