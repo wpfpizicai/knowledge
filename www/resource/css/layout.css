@@ -211,6 +211,9 @@
 .c-course .row .answer{
   padding-left: 40px;
 }
+.c-course .course-teacher{
+  margin-top: 15px;
+}
 .c-course .course-teacher .teacher-pic{
   float: left;
   margin-right: 10px
