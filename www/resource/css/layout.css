@@ -196,4 +196,11 @@
   -webkit-border-radius: 1px;
   border-radius: 1px;
   padding: 30px 30px 48px 30px;
+  margin-top: 30px;
+}
+.c-course-divider{
+  margin: 21px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
 }
