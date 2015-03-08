@@ -106,7 +106,7 @@
   text-decoration: underline;
 }
 .rl-modal .ipt {
-  width: 315px;
+  width: 100%;
   padding: 9px 9px 9px 48px;
   background-color: #fff;
   background-image: url(../img/login_sprite.png);
@@ -206,7 +206,7 @@
   border-color: #f00000;
 }
 .btn-full {
-  width: 318px;
+  width: 100%;
 }
 .btn-block {
   display: block;
