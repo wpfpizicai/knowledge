@@ -188,3 +188,12 @@
 .c-vedio-container{
   height: 254px;
 }
+.c-course{
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,0.25);
+  background-color: #fff;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  padding: 30px 30px 48px 30px;
+}
