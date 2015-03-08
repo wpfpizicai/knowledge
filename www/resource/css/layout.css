@@ -187,6 +187,7 @@
 }
 .c-vedio-container{
   height: 254px;
+  width: 100%;
 }
 .c-course{
   box-sizing: border-box;
