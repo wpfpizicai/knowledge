@@ -95,7 +95,8 @@
   padding: 30px 40px 0;
 }
 .rlf-appendix {
-  line-height: 1em;
+  line-height: 20px;
+  height: 20px;
 }
 .rlf-appendix .rlf-forget {
   color: #0088cc;
@@ -124,6 +125,13 @@
   -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   border-color: #98a1a6;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.ipt-error {
+  color: #cc0000;
+  border-color: #cc0000;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
