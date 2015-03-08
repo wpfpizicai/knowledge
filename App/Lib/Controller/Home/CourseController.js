@@ -20,7 +20,8 @@ module.exports = Controller("Home/BaseController", function(){
         title: "课程" + id,
         navLinks : navLinks,
         section : 'course'
-      })
+      });
+      this.display();
     }
   };
 })
