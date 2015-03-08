@@ -2,7 +2,6 @@
   position: fixed;
   background: #fff;
   z-index: 100000;
-  width: 100%;
   padding-bottom: 30px;
   left: 50%;
   top: 50%;
@@ -62,7 +61,8 @@
   -moz-transform: scale(1.1);
 }
 .rl-modal-body {
-  padding: 27px 40px 0;
+  width: 88.8%;
+  margin:20px auto 0 auto;
 }
 .modal-backdrop {
   background-color: #ffffff;
