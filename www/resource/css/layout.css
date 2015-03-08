@@ -92,6 +92,7 @@
 }
 .ad-courses .thumbnail a{
   display: inline-block;
+  width: 100%;
 }
 .ad-courses .thumbnail a em{
   font-style: normal;
