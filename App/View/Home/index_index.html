@@ -24,7 +24,7 @@
       <%courses.forEach(function(val){%>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <a href="/learn/<%= val.id %>" target="_blank">
+          <a href="/course/<%= val.id %>" target="_blank">
             <img src="/resource/img/k/<%= val.img %>" alt="<%= val.name %>">
             <em><%= val.name %></em>
           </a>
@@ -33,8 +33,8 @@
       </div>
       <%})%>
     </div>
-    <div class="row text-center">
-      <a href="/lesson" class="">查看所有课程</a>
+    <div class="row text-center see-all">
+      <a href="/course">查看所有课程&gt;&gt;</a>
     </div>
   </div>
 <%- include footer.html %>
