@@ -5,12 +5,25 @@
   padding-bottom: 30px;
   left: 50%;
   top: 50%;
-  margin: -210px 0 0 -200px;
+  width: 100%;
+  margin: -100px 0 0 -156px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
+}
+@media (min-width: 768px) {
+  .rl-modal  {
+    width: 50%;
+    margin:-210px 0 0 -156px;
+  }
+}
+@media (min-width: 992px) {
+  .rl-modal  {
+    width: 33.33%;
+    margin: -210px 0 0 -256px;
+  }
 }
 .rl-modal.in {
   opacity: 1;
