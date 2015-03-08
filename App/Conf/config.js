@@ -7,5 +7,7 @@ module.exports = {
   db_name: 'nodejs', // 数据库名
   db_user: 'nodejs', // 用户名
   db_pwd: 'Wpf4284286', // 密码
-  db_prefix: '', // 数据库表前缀
+  db_prefix: 'think_', // 数据库表前缀
+  app_group_list: ['Home', 'Admin'], //分组列表
+  url_resource_reg: /^(upload\/|resource\/|static\/|favicon\.ico|robot\.txt)/ //判断是否是静态资源的正则
 };
