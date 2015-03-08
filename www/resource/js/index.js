@@ -344,14 +344,22 @@ define(function(require, exports, moudle) {
       }
     }()
   };
+  $(function(){
+    $(document).on("click","[data-fromto]",function(e){
+      e.preventDefault();
+      var d=$(this).attr("data-fromto").split(":");
+      $("#"+d[0]).modal("hide");
+      d[1]&&m[d[1]]();
+    });
+    $('#signin_btn').on('click',function(e){
+      m.signin();
+    });
 
-  $('#signin_btn').on('click',function(e){
-    m.signin();
-  });
+    $('#signup_btn').on('click',function(e){
+      m.signup();
+    });
+  })
 
-  $('#signup_btn').on('click',function(e){
-    m.signup();
-  });
 })
 
 
