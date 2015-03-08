@@ -96,6 +96,7 @@
   font-style: normal;
 }
 .ad-courses .thumbnail img{
+  width: 100%;
   transition: 1s;
   -moz-transition: 1s;
   -webkit-transition: 1s;
