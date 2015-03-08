@@ -92,6 +92,9 @@
 .ad-courses .thumbnail a{
   display: inline-block;
 }
+.ad-courses .thumbnail a em{
+  font-style: normal;
+}
 .ad-courses .thumbnail img{
   transition: 1s;
   -moz-transition: 1s;
