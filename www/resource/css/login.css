@@ -64,6 +64,9 @@
   width: 88.8%;
   margin:20px auto 0 auto;
 }
+.rl-modal-body .l-left-wrap{
+  width: 100%;
+}
 .modal-backdrop {
   background-color: #ffffff;
 }
