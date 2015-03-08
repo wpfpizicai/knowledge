@@ -48,7 +48,7 @@
   width: 17px;
   height: 17px;
   cursor: pointer;
-  background: url(/static/img/nlogin.png) no-repeat 0 0;
+  background: url(../img/login_sprite.png) no-repeat 0 0;
   transition: transform 0.2s;
   -webkit-transition: transform 0.2s;
   -moz-transition: transform 0.2s;
@@ -107,7 +107,7 @@
   width: 261px;
   padding: 9px 9px 9px 48px;
   background-color: #fff;
-  background-image: url(/static/img/common/ipt-sprite.png);
+  background-image: url(../img/login_sprite.png);
   background-repeat: no-repeat;
 }
 .ipt-email {
