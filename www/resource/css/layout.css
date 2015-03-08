@@ -4,6 +4,12 @@ a, input, button{
 input, button, textarea, select {
   border: none;
 }
+.l{
+  float: left;
+}
+.r{
+  float: right;
+}
 .nav-header{
   height: 51px;
   overflow: hidden;
