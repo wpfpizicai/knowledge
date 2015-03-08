@@ -14,5 +14,10 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-imagemin": "^2.2.1"
+  }
 }
