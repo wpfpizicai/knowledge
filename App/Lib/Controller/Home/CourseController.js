@@ -12,6 +12,15 @@ module.exports = Controller("Home/BaseController", function(){
         title : "课程"
       });
       this.display();
+    },
+
+    viewAction: function(){
+      var id = this.get('id') | 0;
+      this.assign({
+        title: "课程" + id,
+        navLinks : navLinks,
+        section : 'course'
+      })
     }
   };
 })
