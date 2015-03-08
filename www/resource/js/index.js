@@ -8,7 +8,7 @@ define(function(require, exports, moudle) {
     /*
     <div class="container">
       <div class="row">
-        <div id="signup" class="rl-modal col-sm-12 col-md-12">
+        <div id="signup" class="rl-modal col-sm-6 col-md-4">
           <div class="rl-modal-header">
             <button type="button" class="rl-close" data-dismiss="modal" aria-hidden="true"></button>
             <h1>
@@ -51,7 +51,7 @@ define(function(require, exports, moudle) {
     /*
     <div class="container">
       <div class="row">
-        <div id="signin" class="rl-modal col-sm-12 col-md-12">
+        <div id="signin" class="rl-modal col-sm-6 col-md-4">
           <div class="rl-modal-header">
             <h1>
             <span class="active-title">登录</span>
