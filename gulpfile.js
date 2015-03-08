@@ -10,10 +10,6 @@ gulp.task('img',function() {
         .pipe(gulp.dest(img_src));
 });
 
-gulp.task('clean', function(cb) {
-  del(['./www/resource/img/k/*'], cb)
-});
-
-gulp.task('default',['clean'], function() {
+gulp.task('default', function() {
   gulp.start('img')
 });
