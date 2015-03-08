@@ -27,6 +27,7 @@
   height: 49px;
   color: #666;
   border-bottom: 1px solid #d0d6d9;
+  margin-top: 6px;
 }
 .rl-modal-header h1 span {
   float: left;
@@ -61,7 +62,7 @@
   -moz-transform: scale(1.1);
 }
 .rl-modal-body {
-  padding: 40px 40px 0;
+  padding: 27px 40px 0;
 }
 .modal-backdrop {
   background-color: #ffffff;
