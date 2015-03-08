@@ -104,7 +104,7 @@
   text-decoration: underline;
 }
 .rl-modal .ipt {
-  width: 261px;
+  width: 315px;
   padding: 9px 9px 9px 48px;
   background-color: #fff;
   background-image: url(../img/login_sprite.png);
@@ -114,7 +114,7 @@
   color: #14191e;
   background-color: #ffffff;
   border: 1px solid #98a1a6;
-  height: 20px;
+  height: 40px;
   padding: 9px 9px;
   font-size: 14px;
   line-height: 20px;
