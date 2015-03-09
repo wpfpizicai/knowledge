@@ -12,22 +12,16 @@ module.exports = Controller("Home/BaseController", function(){
           //用户登录成功写入Session
           var email = self.post('email'); //获取post过来的用户名
           var pwd = self.post('password'); //获取post过来的密码
+          if(pwd == "admin"){
+            return self.session('userInfo', {
+              name : 'admin',
+              pwd : pwd,
+              email : email
+            })
+          }else{
+            return self.error(403, '用户名或者密码不正确');
+          }
 
-          D('User').where({ //根据用户邮箱和密码查询符合条件的数据
-              email: email,
-              pwd: md5(pwd)
-          }).find().then(function(data) {
-              console.log(data);
-              if (isEmpty(data)) {
-                  //用户名或者密码不正确，返回错误信息
-                  return self.error(403, '用户名或者密码不正确');
-              } else {
-                  return self.session('userInfo', data);
-              }
-          }).then(function() {
-              //登录成功跳转
-              return self.redirect('/');
-          });
       } else {
         //页面加载
         return return self.redirect('/');
