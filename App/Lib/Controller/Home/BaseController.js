@@ -20,7 +20,7 @@ module.exports = Controller(function(){
           if (self.isAjax()) {
               return self.error(403);
           }
-          self.userInfo = null;
+          self.userInfo = userInfo;
         } else {
           //用户已经登录
           self.userInfo = userInfo;
