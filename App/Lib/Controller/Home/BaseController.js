@@ -13,7 +13,6 @@ module.exports = Controller(function(){
       if (self.http.action === 'login') {
         return;
       }
-
       return self.session('userInfo').then(function(userInfo) {
         //用户信息为空
         if (isEmpty(userInfo)) {

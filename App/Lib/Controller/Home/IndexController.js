@@ -14,7 +14,7 @@ module.exports = Controller("Home/BaseController", function(){
       this.assign(extend({
         courses:courses,
         title : "首页",
-        userInfo : userInfo
+        userInfo : this.userInfo
       },c_data))
       this.display();
     }
