@@ -13,7 +13,7 @@ module.exports = Controller("Home/BaseController", function(){
           var email = self.post('email'); //获取post过来的用户名
           var pwd = self.post('password'); //获取post过来的密码
 
-          return D('user').where({ //根据用户邮箱和密码查询符合条件的数据
+          D('User').where({ //根据用户邮箱和密码查询符合条件的数据
               email: email,
               pwd: md5(pwd)
           }).find().then(function(data) {
