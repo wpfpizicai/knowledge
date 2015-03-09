@@ -11,13 +11,14 @@ module.exports = Controller("Home/BaseController", function(){
   };
   return {
     indexAction: function(){
-      this.assign(extend({
-        courses:courses,
-        title : "首页",
-        userInfo : D('User').where({ //根据用户邮箱和密码查询符合条件的数据
+      var userInfo = D('User').where({ //根据用户邮箱和密码查询符合条件的数据
               email: "tjuwpf@163.com",
               pwd: md5("admin")
           }).find()
+      this.assign(extend({
+        courses:courses,
+        title : "首页",
+        userInfo : userInfo
       },c_data))
       this.display();
     }
