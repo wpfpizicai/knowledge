@@ -20,6 +20,7 @@ module.exports = Controller("Home/BaseController", function(){
       var self = this;
       //页面post
       if (self.isPost()) {
+        console.log(1)
           //用户登录成功写入Session
           var name = self.post('username'); //获取post过来的用户名
           var pwd = self.post('password'); //获取post过来的密码
@@ -28,6 +29,7 @@ module.exports = Controller("Home/BaseController", function(){
               email: email,
               pwd: md5(pwd)
           }).find().then(function(data) {
+              console.log(data);
               if (isEmpty(data)) {
                   //用户名或者密码不正确，返回错误信息
                   return self.error(403, '用户名或者密码不正确');
