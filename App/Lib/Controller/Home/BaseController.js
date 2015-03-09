@@ -20,9 +20,6 @@ module.exports = Controller(function(){
           //ajax访问返回一个json的错误信息
           if (self.isAjax()) {
               return self.error(403);
-          } else {
-              //跳转到登录页
-              return self.redirect('/');
           }
         } else {
           //用户已经登录
