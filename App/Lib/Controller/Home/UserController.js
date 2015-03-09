@@ -20,9 +20,8 @@ module.exports = Controller("Home/BaseController", function(){
       var self = this;
       //页面post
       if (self.isPost()) {
-        console.log(1)
           //用户登录成功写入Session
-          var name = self.post('username'); //获取post过来的用户名
+          var email = self.post('email'); //获取post过来的用户名
           var pwd = self.post('password'); //获取post过来的密码
 
           return D('User').where({ //根据用户邮箱和密码查询符合条件的数据
