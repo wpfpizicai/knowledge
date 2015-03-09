@@ -10,7 +10,6 @@ module.exports = Controller("Home/BaseController", function(){
       //render View/Home/index_index.html file
       //var users = D('user').select();
       this.assign({
-        navLinks : navLinks,
         title : "首页",
         courses:courses,
         section : 'home'

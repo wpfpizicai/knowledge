@@ -149,7 +149,7 @@ define(function(require, exports, moudle) {
               success:function(vals){
                 var remember=$("#auto-signin")[0].checked?"1":"0";
                 $.ajax({
-                  url:"/Admin/login",
+                  url:"/user/signin",
                   data:{
                     username:vals.email,
                     password:vals.password,
@@ -205,7 +205,7 @@ define(function(require, exports, moudle) {
                 rules:[{
                   rule:function(cb,v){
                     return $.ajax({
-                      url:"/Admin/checkemail",
+                      url:"/user/checkemail",
                       method:"post",
                       data:{email:v},
                       dataType:"json",
@@ -306,7 +306,7 @@ define(function(require, exports, moudle) {
             $this.closest("form").validate({
               success:function(vals){
                 $.ajax({
-                  url:"/Admin/register/",
+                  url:"/user/signup",
                   data:{
                     username:vals.email,
                     password:vals.password,
