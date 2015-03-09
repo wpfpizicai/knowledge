@@ -7,7 +7,8 @@ module.exports = Controller("Home/BaseController", function(){
   return {
     indexAction: function(){
       this.assign({
-        title : "合作伙伴"
+        title : "合作伙伴"，
+        navLinks : navLinks
       })
       this.display();
     }

@@ -8,11 +8,27 @@ module.exports = Controller(function(){
   'use strict';
   return {
     init: function(http){
-      this.super("init", http);
-      this.assign{
-        navLinks : navLinks
-      };
-      //其他的通用逻辑
+      var self = this;
+      self.super("init", http);
+      if (self.http.action === 'login') {
+        return;
+      }
+
+      return self.session('userInfo').then(function(userInfo) {
+        //用户信息为空
+        if (isEmpty(userInfo)) {
+          //ajax访问返回一个json的错误信息
+          if (self.isAjax()) {
+              return self.error(403);
+          } else {
+              //跳转到登录页
+              return self.redirect('/');
+          }
+        } else {
+          //用户已经登录
+          self.userInfo = userInfo;
+        }
+      });
     }
   }
 })
