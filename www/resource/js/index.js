@@ -151,7 +151,7 @@ define(function(require, exports, moudle) {
                 $.ajax({
                   url:"/user/signin",
                   data:{
-                    username:vals.email,
+                    email:vals.email,
                     password:vals.password,
                     remember:remember
                   },
