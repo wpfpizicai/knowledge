@@ -11,15 +11,12 @@ module.exports = Controller("Home/BaseController", function(){
   };
   return {
     indexAction: function(){
-      var userInfo = D('User').where({ //根据用户邮箱和密码查询符合条件的数据
-              email: "tjuwpf@163.com"
-          }).find();
-      this.assign({
+      var self = this;
+      this.assign(extend({
         courses:courses,
         title : "首页",
-        userInfo : userInfo,
-        navLinks : navLinks,
-        section : 'home'})
+        userInfo : self.userInfo
+      },c_data))
       this.display();
     }
   };
