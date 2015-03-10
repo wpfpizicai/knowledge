@@ -17,8 +17,16 @@ module.exports = Controller("Home/BaseController", function(){
               email: email,
               pwd: md5(pwd)
           }).find().then(function(data) {
-              return self.session('userInfo', data);
-          })
+              if (isEmpty(data)) {
+                //用户名或者密码不正确，返回错误信息
+                return self.error(403, '用户名或者密码不正确');
+              } else {
+                return self.session('userInfo', data);
+              }
+          }).then(function() {
+            //登录成功跳转
+            return self.redirect('/');
+          });
       }
     },
 
