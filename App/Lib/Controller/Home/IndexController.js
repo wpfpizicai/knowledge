@@ -13,9 +13,7 @@ module.exports = Controller("Home/BaseController", function(){
     indexAction: function(){
       var userInfo = D('User').where({ //根据用户邮箱和密码查询符合条件的数据
               email: "tjuwpf@163.com"
-          }).find().then(function(data){
-            console.log(data);
-          })
+          }).find();
       this.assign({
         courses:courses,
         title : "首页",
