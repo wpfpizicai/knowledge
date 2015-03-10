@@ -16,11 +16,12 @@ module.exports = Controller("Home/BaseController", function(){
           }).find().then(function(data){
             console.log(data);
           })
-      this.assign(extend({
+      this.assign({
         courses:courses,
         title : "首页",
-        userInfo : userInfo
-      },c_data))
+        userInfo : userInfo,
+        navLinks : navLinks,
+        section : 'home'})
       this.display();
     }
   };
