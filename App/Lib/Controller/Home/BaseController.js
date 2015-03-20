@@ -14,17 +14,7 @@ module.exports = Controller(function(){
         return;
       }
       return self.session('userInfo').then(function(userInfo) {
-        //用户信息为空
-        if (isEmpty(userInfo)) {
-          //ajax访问返回一个json的错误信息
-          if (self.isAjax()) {
-              return self.error(403);
-          }
-          self.userInfo = userInfo;
-        } else {
-          //用户已经登录
-          self.userInfo = userInfo;
-        }
+        self.userInfo = userInfo;
       });
     }
   }

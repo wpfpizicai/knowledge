@@ -152,7 +152,7 @@ define(function(require, exports, moudle) {
                   url:"/user/signin",
                   data:{
                     email:vals.email,
-                    password:vals.password,
+                    pwd:vals.password,
                     remember:remember
                   },
                   method:"post",
@@ -351,15 +351,9 @@ define(function(require, exports, moudle) {
       $("#"+d[0]).modal("hide");
       d[1]&&m[d[1]]();
     });
-    $('#signin_btn').on('click',function(e){
-      m.signin();
-    });
+  });
 
-    $('#signup_btn').on('click',function(e){
-      m.signup();
-    });
-  })
-
+  moudle.exports = m;
 })
 
 

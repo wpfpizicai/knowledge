@@ -5,19 +5,39 @@
  * @return {[type]}         [description]
  */
 module.exports = Controller(function() {
-    'use strict';
+  'use strict';
 
-    return {
-        init: function(http) {
-            this.super("init", http);
-            //其他的通用逻辑
-            var self = this;
+  return {
+    init: function(http) {
+      this.super("init", http);
 
-            //登录页面不检测用户是否已经登录
-            return self.session('userInfo').then(function(userInfo) {
-                self.userInfo = userInfo;
-                self.assign('userInfo', userInfo);
-            })
-        }
+      if (this.navType) {
+        this.assign("navType", this.navType);
+      };
+
+      if (this.http.action != "login") {
+        return this.checkLogin();
+      };
+
+      /**
+       * 检测是否登录
+       * @return {[type]} [description]
+       */
+      checkLogin: function(){
+        var self = this;
+        return this.session("login").then(function(value){
+          if (isEmpty(value)) {
+            if (self.isAjax()) {
+              return self.error(403);
+            }else{
+              return self.redirect("/login");
+            }
+          }else{
+            self.login = value;
+            self.assign('login', value)
+          }
+        })
+      }
     }
+  }
 });
