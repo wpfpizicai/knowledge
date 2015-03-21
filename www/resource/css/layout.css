@@ -250,3 +250,6 @@ input, button, textarea, select {
 .c-course .course-teacher .reffernce div{
   line-height: 1.5;
 }
+form.activity,div.activity{
+  margin: 20px 0;
+}
