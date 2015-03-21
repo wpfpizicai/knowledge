@@ -14,7 +14,14 @@ module.exports = Controller("Home/BaseController", function(){
         if(!data.atime){
           data.atime = getDateTime()
         }
-        return D('ActivityUser').add(data);
+        return D('ActivityUser').add(data).then(function(data){
+          self.end({
+            err :0,
+            id :data.id
+          });
+          //self.redirect('/activity/apply');
+        });
+
       }else{
         self.assign({
           section : 'activity',
