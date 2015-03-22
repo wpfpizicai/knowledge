@@ -1,0 +1,21 @@
+<footer class="bs-docs-footer" id="footer" role="contentinfo">
+  <div class="footer-copyright text-center">版权所有：中国金融培训中心 京ICP备12001307号 Copyright©www.chinacft.org All Rights Reserved </div>
+</footer>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://a.tbcdn.cn/libs/seajs/1.1.0/sea.js"></script>
+<script>
+  var root = location.protocol + "//" + location.host + "/resource/";
+  seajs.config({
+    base : root,
+    path : {
+      'js' : root + 'js',
+      'css' : root + 'css',
+      'img' : root + 'img',
+      'swf' : root + 'swf'
+    },
+    map: [
+      [ /^(.*\/.*\/.*\.(?:css|js))(?:.*)$/i, '$1?20150308']
+    ]
+  });
+</script>

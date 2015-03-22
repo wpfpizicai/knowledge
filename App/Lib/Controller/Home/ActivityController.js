@@ -3,7 +3,12 @@ module.exports = Controller("Home/BaseController", function(){
   return {
     indexAction: function(){
       var self = this;
-
+      self.assign({
+        section : 'activity',
+        userInfo : self.userInfo,
+        navLinks : navLinks,
+        title : "2015中国金融高端培训 中国金融培训中心"
+      })
       self.display();
     },
 
