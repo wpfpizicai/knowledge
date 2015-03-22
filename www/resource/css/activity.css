@@ -148,10 +148,14 @@ body,a{
   float:left;
   display:inline;
   width:25%;
+  border-right: 1px solid #d4d4d4;
+}
+.Hot li.last{
+  border-right: none;
 }
 .HotTit{
   padding-top:8px;
-  color:#248fce;
+  color:#31B9E1;
   font-size:17px;
   width:7em;
   margin-bottom:22px;
@@ -197,7 +201,7 @@ body,a{
   width:700px;
 }
 .indexH2{
-  border-left:2px solid #248fce;
+  border-left:2px solid #31B9E1;
   padding-left:12px;
   color:#000;
   font-size:18px;
@@ -208,7 +212,7 @@ body,a{
 }
 .indexH3{
   font-size:16px;
-  color:#248fce;
+  color:#31B9E1;
   margin-bottom:16px;
   font-family: "微软雅黑";
 }
@@ -251,7 +255,7 @@ body,a{
   color:#1d1c1a;
   line-height:24px;
   background: #EBEDF0;
-  border-top: 3px solid #248fce;
+  border-top: 3px solid #31B9E1;
   border-radius:5px;
   -webkit-border-radius:5px;
   -moz-border-radius: 5px;
@@ -268,7 +272,7 @@ body,a{
   height:354px;
 }
 .zxdt .tit,.pxnr .tit,.pxdx .tit,.lxwm .tit{
-  color:#248fce;
+  color:#31B9E1;
   font-size:18px;
   margin-bottom:14px;
 }
@@ -295,7 +299,7 @@ body,a{
   margin-bottom:7px;
 }
 .lxwm .pink{
-  color:#248fce;
+  color:#31B9E1;
 }
 .bodybg footer{
   position: relative;
