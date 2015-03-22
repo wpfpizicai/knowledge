@@ -51,16 +51,30 @@
   </div>
   <%- include ../a_footer.html %>
   <script>
+    $('input.form-control').on('focus',function(e){
+      var that = this;
+      $(that).parent().removeClass('has-error')
+    });
     $('#submit_btn').on('click',function(e) {
       var values = {};
       $.each($('#activity_form').serializeArray(), function(i, field) {
           values[field.name] = field.value;
       });
-      $.post("/activity/apply",values,function(result){
-        if(result.err == 0){
-          alert('注册成功!')
-        }
-      },'json')
+      if(!values['username']){
+        $('input[name="username"]').parent().addClass('has-error')
+      }
+      else if(!values['email']){
+        $('input[name="email"]').parent().addClass('has-error')
+      }
+      else if(!values['phone']){
+        $('input[name="phone"]').parent().addClass('has-error')
+      }else{
+        $.post("/activity/apply",values,function(result){
+          if(result.err == 0){
+            alert('注册成功!')
+          }
+        },'json')
+      }
     })
   </script>
 </body>
