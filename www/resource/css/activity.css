@@ -140,7 +140,6 @@ body,a{
   color:#1a1a1a;
 }
 .Hot{
-  background:url(../images/programbg.jpg) no-repeat;
   height:199px;
   margin:20px 0 32px;
 }
@@ -157,7 +156,7 @@ body,a{
   padding-top:8px;
   color:#31B9E1;
   font-size:17px;
-  width:7em;
+  width:120;
   margin-bottom:22px;
   height:66px;
   line-height: 22px;
@@ -191,7 +190,6 @@ body,a{
 .hot4 .HotCont{
   margin-left:48px;
 }
-
 .content{
   margin-bottom:48px;
 }
@@ -301,16 +299,13 @@ body,a{
 .lxwm .pink{
   color:#31B9E1;
 }
-.bodybg footer{
-  position: relative;
-}
 .bodybg .bg{
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
-  background-image: url("../img/banner.jpg");
+  background-image: url("../img/banner_1.jpg");
   height: 480px;
   position: relative;
   width: 100%;
@@ -321,7 +316,7 @@ body,a{
 .bodybg .bm-btn{
   position: absolute;
   top:418px;
-  left: 56%;
+  left: 48.4%;
 }
 .bodybg .bm-btn a{
   color: #fff;

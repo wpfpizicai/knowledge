@@ -23,6 +23,7 @@ module.exports = Controller("Home/BaseController", function(){
   return {
     indexAction: function(){
       var self = this;
+      return self.redirect('/activity');
       this.assign(extend({
         courses:courses,
         title : "首页",

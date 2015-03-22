@@ -257,6 +257,9 @@ input, button, textarea, select {
 .c-course .course-teacher .reffernce div{
   line-height: 1.5;
 }
+.my-buttons form.activity{
+  min-height: 470px;
+}
 form.activity,div.activity{
   margin: 20px 0;
 }
@@ -269,8 +272,6 @@ img.a-logo{
 footer{
   border-top: 1px solid #d4d4d4;
   width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 .activity .form-control{
   width: 97%;
