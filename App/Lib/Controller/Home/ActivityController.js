@@ -40,8 +40,8 @@ module.exports = Controller("Home/BaseController", function(){
 
     seeAction: function(){
       var self = this;
-      var users = D('ActivityUser').select().then(function(users){
-        users = users.map(function(item){
+      var users = D('ActivityUser').page(this.get('page')).countSelect().then(function(data){
+        data.data = data.data.map(function(item){
           item.stime = getDateTime(item.atime);
           return item;
         })
@@ -50,7 +50,8 @@ module.exports = Controller("Home/BaseController", function(){
             userInfo : self.userInfo,
             navLinks : navLinks,
             title : "活动查看",
-            users : users
+            users : data.data,
+            pagerData : data
         });
         return self.display()
       });

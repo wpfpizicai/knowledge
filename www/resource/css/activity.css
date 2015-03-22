@@ -172,6 +172,7 @@ body,a{
   width:7em;
   margin-bottom:22px;
   height:66px;
+  line-height: 22px;
 }
 .HotCont{
   width:14em;
@@ -312,11 +313,6 @@ body,a{
 .lxwm .pink{
   color:#173A7B;
 }
-
-.footer{
-  border-top:1px solid #d4d4d4;
-  padding-top:20px;
-  height:80px;
-  text-align:center;
-  color:#8f8f8f;
+.bodybg footer{
+  position: relative;
 }

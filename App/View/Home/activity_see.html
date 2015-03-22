@@ -21,9 +21,9 @@
           </tr>
         </thead>
         <tbody>
-          <%users.forEach(function(item){%>
-            <tr>
-              <td><%-item.id%></td>
+          <%users.forEach(function(item,i){%>
+            <tr data-id="<%-item.id%>">
+              <td><%-(i+1)%></td>
               <td><%-item.username%></td>
               <td><%-item.email%></td>
               <td><%-item.phone%></td>
@@ -35,6 +35,7 @@
           <%})%>
         </tbody>
       </table>
+      <%- include ../pager.html %>
     </div>
   </div>
   <%- include ../a_footer.html %>
