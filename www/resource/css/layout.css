@@ -257,11 +257,9 @@ input, button, textarea, select {
 .c-course .course-teacher .reffernce div{
   line-height: 1.5;
 }
-.my-buttons form.activity{
-  min-height: 470px;
-}
 form.activity,div.activity{
   margin: 20px 0;
+  min-height: 470px;
 }
 .my-buttons{
   margin: 10px 0 30px;
