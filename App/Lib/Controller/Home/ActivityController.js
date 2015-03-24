@@ -32,7 +32,7 @@ module.exports = Controller("Home/BaseController", function(){
           section : 'activity',
           userInfo : self.userInfo,
           navLinks : navLinks,
-          title : "活动报名"
+          title : "中国金融高端培训（2015） 在线报名"
         })
         self.display();
       }
