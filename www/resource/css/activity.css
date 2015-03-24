@@ -300,7 +300,7 @@ body,a{
 }
 .nav-logo{
   position: absolute;
-  top: 0;
+  top: 20px;
   height: 65px;
   width: 300px;
   z-index: 1;
