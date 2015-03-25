@@ -10,19 +10,27 @@ module.exports = Controller("Home/BaseController", function() {
       if(self.isPost()){
         var name = self.post('email').trim(),
           pwd = self.post("pwd").trim();
-        if (name == C('admin_username') && pwd == C('admin_password')) {
-          self.session("login", name);
-          self.success();
-        }else{
-          self.error(1, "用户名或者密码错误");
-        }
+
+
+        return D('User').where({ //根据用户名和密码查询符合条件的数据
+            name: name,
+            pwd: md5(pwd)
+        }).find().then(function(data) {
+            if (isEmpty(data)) {
+                return self.error(403, '用户名或者密码不正确');
+            } else {
+                return self.session('userinfo', data);
+            }
+        }).then(function() {
+            return self.success();
+        });
       }else{
         this.display()
       }
     },
     logoutAction: function(){
       var self = this;
-      self.session("login","");
+      self.session("userinfo","");
       self.redirect("/login");
     },
     indexAction: function(){

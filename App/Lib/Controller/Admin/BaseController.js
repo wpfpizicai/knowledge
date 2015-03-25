@@ -25,7 +25,7 @@ module.exports = Controller(function() {
        */
       checkLogin: function(){
         var self = this;
-        return this.session("login").then(function(value){
+        return this.session("userinfo").then(function(value){
           if (isEmpty(value)) {
             if (self.isAjax()) {
               return self.error(403);
@@ -33,8 +33,8 @@ module.exports = Controller(function() {
               return self.redirect("/login");
             }
           }else{
-            self.login = value;
-            self.assign('login', value)
+            self.userinfo = value;
+            self.assign('userinfo', value)
           }
         })
       }

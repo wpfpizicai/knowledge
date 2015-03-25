@@ -10,12 +10,20 @@ module.exports = Controller(function(){
     init: function(http){
       var self = this;
       self.super("init", http);
-      if (self.http.action === 'login') {
-        return;
-      }
-      return self.session('userInfo').then(function(userInfo) {
-        self.userInfo = userInfo;
-      });
+      // if (self.http.group ==="Home") {
+      //   return self.session('userinfo').then(function(value) {
+      //     if (isEmpty(value)) {
+      //       if (self.isAjax()) {
+      //         return self.error(403);
+      //       }else{
+      //         return self.redirect("/login");
+      //       }
+      //     }else{
+      //       self.userinfo = value;
+      //       self.assign('userinfo', value)
+      //     }
+      //   });
+      // }
     }
   }
 })
