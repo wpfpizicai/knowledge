@@ -90,7 +90,7 @@ module.exports = Controller("Home/BaseController", function(){
               section : 'activity',
                 userInfo : self.userInfo,
                 navLinks : navLinks,
-                title : "用户",
+                title : "用户-"+ data.username,
                 user : data
             });
             return self.display()
@@ -121,6 +121,27 @@ module.exports = Controller("Home/BaseController", function(){
           }
         }
       });
+    },
+
+    searchAction: function(){
+      var self = this;
+      if(self.isPost()){
+        var post_data = self.post();
+        console.log(post_data)
+        var users = D('ActivityUser').where(post_data).field('username,email,mobile,status').find().then(function(data) {
+          return self.success(data)
+        },function(err){
+           return self.error()
+        })
+      }else{
+        self.assign({
+          section : 'activity',
+            userInfo : self.userInfo,
+            navLinks : navLinks,
+            title : "用户查询"
+        });
+        return self.display()
+      }
     }
 
   };

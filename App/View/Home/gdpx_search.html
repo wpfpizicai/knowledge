@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+<head>
+  <%- include ../meta.html %>
+  <style>
+    .container .my-form .my-row{
+      margin: 16% auto;
+      width: 75%;
+    }
+    .serarch-input{
+      width: 96%;
+    }
+  </style>
+</head>
+<body>
+  <%- include ../a_header.html %>
+  <div class="container">
+    <form class="form-horizontal my-form">
+      <div class="row my-row">
+        <div class="col-md-10">
+          <input type="text" class="form-control search-input" id="search_input" placeholder="请输入手机号或者邮箱号码">
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" id="search_btn">&nbsp;&nbsp;&nbsp;&nbsp;查询&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <%- include ../a_footer.html %>
+  <script>seajs.use('js/gdpx/search')</script>
+</body>
+</html>
