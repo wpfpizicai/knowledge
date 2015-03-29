@@ -1,0 +1,154 @@
+<!Doctype html>
+<html>
+<head>
+  <%- include ../meta.html %>
+</head>
+<body>
+  <%- include ../a_header.html %>
+  <div class="container">
+    <form role="form" class="form-horizontal activity" id="activity_form" data-id="<%=user.id%>" data-status="<%=user.status%>">
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="username" class="control-label">姓名</label>
+          <input readonly type="text" class="form-control input-lg" name="username" placeholder="姓名" value="<%- user.username%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="nation" class="control-label">民族</label>
+          <input readonly type="text" class="form-control input-lg" name="nation" placeholder="民族" value="<%- user.nation%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="sex" class="control-label">性别</label>
+          <input readonly type="text" class="form-control input-lg" name="sex" placeholder="性别" value="<%- user.sex%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="idcardnum" class="control-label">身份证号码（护照号码）</label>
+          <input readonly type="text" class="form-control input-lg" name="idcardnum" placeholder="身份证号码（护照号码）" value="<%- user.idcardnum%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="email" class="control-label">邮箱</label>
+          <input readonly type="text" class="form-control input-lg" name="email" placeholder="邮箱" value="<%- user.email%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="mobile">手机号码</label>
+          <input readonly type="text" class="form-control input-lg" name="mobile" placeholder="手机号码" value="<%- user.mobile%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="phone">联系电话</label>
+          <input readonly type="text" class="form-control input-lg" name="phone" placeholder="联系电话" value="<%- user.phone%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="fax">传真</label>
+          <input readonly type="text" class="form-control input-lg" name="fax" placeholder="传真" value="<%- user.fax%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="education">学历</label>
+          <input readonly type="text" class="form-control input-lg" name="fax" placeholder="学历" value="<%- user.education%>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="address">通讯地址</label>
+          <input readonly type="text" class="form-control input-lg" name="address" placeholder="通讯地址" value="<%- user.address%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="zipcode">邮编</label>
+          <input readonly type="text" class="form-control input-lg" name="zipcode" placeholder="邮编" value="<%- user.zipcode%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="career">职业</label>
+          <input readonly type="text" class="form-control input-lg" name="career" placeholder="邮编" value="<%- user.career%>">
+        </div>
+      </div>
+      <div class="row people-wrap finace-people<% if(user.career == '金融机构从业人员'){%><%}else{%> hide<%}%>">
+        <div class="row">
+          <div class="form-group col-md-4">
+          <label for="unit">单位</label>
+            <input readonly type="text" class="form-control input-lg" name="unit" placeholder="单位" value="<%-user.unit%>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="career_name">职称</label>
+            <input readonly type="text" class="form-control input-lg" name="career_name" placeholder="职称">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label for="work_experience">主要工作经历</label>
+            <textarea readonly="" class="form-control" name="career_name" rows="3"><%= user.work_experience%></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row people-wrap teacher-people <% if(user.career == '教师'){%><%}else{%>hide<%}%>">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="unit">单位</label>
+            <input readonly type="text" class="form-control input-lg" name="unit" placeholder="单位" value="<%-user.unit%>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="career_name">职称</label>
+            <input readonly type="text" class="form-control input-lg" name="career_name" placeholder="职称" value="<%-user.career_name%>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label for="research">主要研究方向</label>
+            <textarea readonly class="form-control" name="research" rows="3"><%=user.research%></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row people-wrap student-people<% if(user.career == '学生'){%><%}else{%> hide<%}%>">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="school">学校</label>
+            <input readonly type="text" class="form-control input-lg" name="school" placeholder="学校" value="<%-user.school%>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="s_class">年级</label>
+            <input readonly type="text" class="form-control input-lg" name="s_class" placeholder="年级" value="<%-user.s_class%>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="department">所学专业</label>
+            <input readonly type="text" class="form-control input-lg" name="department" placeholder="所学专业" value="<%-user.department%>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="english">英语水平</label>
+            <input readonly type="text" class="form-control input-lg" name="english" placeholder="所获取的英语证书" value="<%-user.english%>">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="student_id">学号</label>
+            <input readonly type="text" class="form-control input-lg" name="student_id" placeholder="学号" value="<%-user.student_id%>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label for="study">个人学习经历</label>
+            <textarea readonly class="form-control" name="study" rows="3"><%=user.study%></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="status">状态：</label>
+          <input readonly type="text" class="form-control input-lg" name="status" placeholder="状态" value="<% user_status=['审核中','通过','不通过']%><%=user_status[user.status]%>">
+        </div>
+      </div>
+    </form>
+    <div class="container my-buttons">
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-primary btn-lg" id="pass_btn">通过</button>
+          <a class="btn btn-default btn-lg" id="not_pass_btn">不通过</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <%- include ../a_footer.html %>
+  <script>seajs.use('js/gdpx/item')</script>
+</body>
+</html>

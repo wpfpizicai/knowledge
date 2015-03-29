@@ -28,7 +28,7 @@ define(function(require,exports,module) {
       else if(!values['phone']){
         $('input[name="phone"]').parent().addClass('has-error')
       }else{
-        $.post("/activity/apply",values,function(result){
+        $.post("/gdpx/apply",values,function(result){
           if(result.err == 0){
             alert('注册成功!')
           }

@@ -1,5 +1,8 @@
 module.exports = Controller("Home/BaseController", function(){
   "use strict";
+  function checkstate(){
+
+  };
   return {
     indexAction: function(){
       var self = this;
@@ -65,6 +68,60 @@ module.exports = Controller("Home/BaseController", function(){
           });
         }
       });
+    },
+
+    itemAction: function(){
+      var self = this;
+      return self.session('userinfo').then(function(value) {
+        if (isEmpty(value)) {
+          if (self.isAjax()) {
+            return self.error(403);
+          }else{
+            return self.redirect("/login");
+          }
+        }else{
+          var id = self.get('id');
+          if(!id){
+            return self.redirect("/gdpx/see")
+          }
+          var users = D('ActivityUser').where({id : id}).find().then(function(data) {
+            data.stime = getDateTime(data.atime);
+            self.assign({
+              section : 'activity',
+                userInfo : self.userInfo,
+                navLinks : navLinks,
+                title : "用户",
+                user : data
+            });
+            return self.display()
+          });
+        }
+      });
+    },
+
+    passAction: function () {
+      var self = this;
+      return self.session('userinfo').then(function(value) {
+        if (isEmpty(value)) {
+          if (self.isAjax()) {
+            return self.error(403);
+          }else{
+            return self.redirect("/login");
+          }
+        }else{
+          if(self.isPost()){
+            var post_data = self.post();
+            var users = D('ActivityUser').where({id : post_data.id}).update({
+              status : post_data.status
+            }).then(function(data) {
+              self.success(data)
+            },function(err){
+              self.error()
+            })
+          }
+        }
+      });
     }
+
   };
 })

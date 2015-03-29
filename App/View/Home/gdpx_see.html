@@ -23,7 +23,7 @@
         <tbody>
           <%users.forEach(function(item,i){%>
             <tr data-id="<%-item.id%>">
-              <td><%-(i+1)%></td>
+              <td><a href="/gdpx/item/?id=<%-item.id%>" target="_blank"><%-(i+1)%></a></td>
               <td><%-item.username%></td>
               <td><%-item.email%></td>
               <td><%-item.phone%></td>
