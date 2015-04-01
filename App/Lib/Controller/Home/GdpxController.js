@@ -135,12 +135,22 @@ module.exports = Controller("Home/BaseController", function(){
       }else{
         self.assign({
           section : 'activity',
-            userInfo : self.userInfo,
-            navLinks : navLinks,
-            title : "用户查询"
+          userInfo : self.userInfo,
+          navLinks : navLinks,
+          title : "用户查询"
         });
         return self.display()
       }
+    },
+
+    scheduleAction: function(){
+      var self = this;
+      self.assign({
+        section : 'activity',
+        userInfo : self.userInfo,
+        navLinks : navLinks,
+        title : "日程安排-中国金融高端培训（2015）"
+      })
     }
 
   };
