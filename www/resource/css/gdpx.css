@@ -113,24 +113,35 @@ body,a{
   left:0;
   width:50%;
   height:385px;
-  background:url(../images/bodybg.jpg) repeat-x #fff;
 }
 .htmlScroll{
   overflow-x:auto;
   overflow-y:scroll;
 }
-.fullScreen,.fullScreen body,.fullScreen form
-{
-    height:100%;
+.fullScreen,.fullScreen body,.fullScreen form{
+  height:100%;
+}
+.h-container{
+  width: 100%;
+  background:url(../img/bg.png) repeat-x #fff;
+}
+.h-container .header{
+  width: 1200px;
+  margin:0 auto;
 }
 .m-container{
-  width:1140px;
+  width:1200px;
   margin:0 auto;
   position:relative;
 }
 .header{
   position:relative;
-  margin:5px;
+  margin-bottom:32px;
+}
+.header .logo{
+  position: absolute;
+  top: 30px;
+  left: 0;
 }
 .bannerInfo{
   position:absolute;
@@ -140,11 +151,12 @@ body,a{
   color:#1a1a1a;
 }
 .Hot{
-  height:199px;
-  margin:20px 0 32px;
+  height:105px;
+  margin: 40px 0;
 }
 .Hot li{
   float:left;
+  position: relative;
   display:inline;
   width:25%;
   border-right: 1px solid #d4d4d4;
@@ -152,42 +164,29 @@ body,a{
 .Hot li.last{
   border-right: none;
 }
+.Hot .hot2 .HotTit{
+  padding-top: 21px;
+}
+.Hot .hot4 .HotTit{
+  padding-top: 24px;
+}
 .HotTit{
   padding-top:8px;
   color:#31B9E1;
-  font-size:17px;
+  font-size:24px;
   width:202px;
+  margin-left: 80px;
   margin-bottom:4px;
-  height:56px;
-  line-height: 22px;
+  height:99px;
+  line-height: 30px;
 }
-.HotCont{
-  width:14em;
-  line-height: 22px;
+.Hot li em{
+  position: absolute;
+  top:26px;
+  left: 10px;
 }
-.hot1 .HotTit{
-  margin-left:4px;
-}
-.hot1 .HotCont{
-  margin-left:4px;
-}
-.hot2 .HotTit{
-  margin-left:20px;
-}
-.hot2 .HotCont{
-  margin-left:20px;
-}
-.hot3 .HotTit{
-  margin-left:36px;
-}
-.hot3 .HotCont{
-  margin-left:36px;
-}
-.hot4 .HotTit{
-  margin-left:48px;
-}
-.hot4 .HotCont{
-  margin-left:48px;
+.Hot li em.first{
+  left: 0px;
 }
 .content{
   margin-bottom:48px;
@@ -195,7 +194,7 @@ body,a{
 .index .contentLeft{
   float:left;
   _display:inline;
-  width:700px;
+  width:800px;
 }
 .indexH2{
   border-left:2px solid #31B9E1;
@@ -227,7 +226,7 @@ body,a{
   float:left;
   _display:inline;
   width:184px;
-  margin-left:62px;
+  margin-left:84px;
 }
 .jchg span{ display:block; width:184px; text-align:center;margin-top: 12px;}
 .jchgmore{ float:right; margin-top:20px;}
@@ -356,23 +355,19 @@ body,a{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-vector-600,.icon-vector-601,.icon-vector-602,.icon-vector-603{
+  font-size: 54px;
+  color:#31B9E1
+}
 .icon-vector-600:before {
   content: "\e600";
-  font-size: 34px;
 }
-
 .icon-vector-601:before {
   content: "\e601";
-  font-size: 34px;
 }
-
 .icon-vector-602:before {
   content: "\e602";
-  font-size: 34px;
 }
-
 .icon-vector-603:before {
   content: "\e603";
-  font-size: 34px;
 }

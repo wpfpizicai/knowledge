@@ -25,10 +25,10 @@ input, button, textarea, select {
   padding:0;
 }
 .carousel{
-  height: 460px;
+  height: 560px;
 }
 .carousel .item {
-  height: 460px;
+  height: 560px;
   background-color: #777;
 }
 .carousel-caption {
@@ -63,12 +63,20 @@ input, button, textarea, select {
   top:0;
   left:0;
   min-width:100%;
-  height:460px;
+  height:560px;
   text-shadow:0 1px 3px rgba(0,0,0,0.4),0 0 30px rgba(0,0,0,0.075);
   background-repeat:repeat-x;
   background-image:-webkit-linear-gradient(45deg, #31B9E1, #1D79C2);
   background-image:-moz-linear-gradient(45deg, #31B9E1, #1D79C2);
   background-image:linear-gradient(45deg,  #31B9E1, #1D79C2)
+}
+.carousel-caption .zxbm-btn{
+  position: relative;
+  top: 0px;
+  right: -31px;
+  display: inline-block;
+  width: 98px;
+  height: 79px;
 }
 .carousel .masthead-bg:after{
   content:'';
@@ -78,7 +86,7 @@ input, button, textarea, select {
   right:0;
   bottom:0;
   left:0;
-  background: url(../img/banner_1.jpg) no-repeat center center;
+  background: url(../img/banner_use.jpg) no-repeat center center;
   background-size: cover;
 }
 @media screen and (min-width:768px){

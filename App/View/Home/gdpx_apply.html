@@ -9,15 +9,15 @@
     <form role="form" class="form-horizontal activity" id="activity_form">
       <div class="row">
         <div class="form-group col-md-4">
-          <label for="username" class="control-label">姓名</label>
+          <label for="username" class="control-label">姓名<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="username" placeholder="姓名">
         </div>
         <div class="form-group col-md-4">
-          <label for="nation" class="control-label">民族</label>
+          <label for="nation" class="control-label">民族<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="nation" placeholder="民族">
         </div>
         <div class="form-group col-md-4">
-          <label for="sex" class="control-label">性别</label>
+          <label for="sex" class="control-label">性别<em class="text-danger">*</em></label>
           <div class="col-md-12">
             <label for="sex_nan" class="radio-inline"><input type="radio" name="sex" id="sex_nan">男</label>
             <label for="sex_nv" class="radio-inline"><input type="radio" name="sex" id="sex_nv">女</label>
@@ -26,21 +26,21 @@
       </div>
       <div class="row">
         <div class="form-group col-md-4">
-          <label for="idcardnum" class="control-label">身份证号码（护照号码）</label>
+          <label for="idcardnum" class="control-label">身份证号码（护照号码）<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="idcardnum" placeholder="身份证号码（护照号码）">
         </div>
         <div class="form-group col-md-4">
-          <label for="email" class="control-label">邮箱</label>
+          <label for="email" class="control-label">邮箱<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="email" placeholder="邮箱">
         </div>
         <div class="form-group col-md-4">
-          <label for="mobile">手机号码</label>
+          <label for="mobile">手机号码<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="mobile" placeholder="手机号码">
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-4">
-          <label for="phone">联系电话</label>
+          <label for="phone">联系电话<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="phone" placeholder="联系电话">
         </div>
         <div class="form-group col-md-4">
@@ -48,7 +48,7 @@
           <input type="text" class="form-control input-lg" name="fax" placeholder="传真">
         </div>
         <div class="form-group col-md-4">
-          <label for="education">学历</label>
+          <label for="education">学历<em class="text-danger">*</em></label>
           <select class="form-control input-lg" name="education" placeholder="学历">
             <option>本科</option>
             <option>硕士</option>
@@ -58,109 +58,93 @@
         </div>
       </div>
       <div class="row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-12">
           <label for="result">主要学术成果</label>
           <textarea class="form-control" name="result" rows="3"></textarea>
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-4">
-          <label for="address">通讯地址</label>
+          <label for="address">通讯地址<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="address" placeholder="通讯地址">
         </div>
         <div class="form-group col-md-4">
-          <label for="zipcode">邮编</label>
+          <label for="zipcode">邮编<em class="text-danger">*</em></label>
           <input type="text" class="form-control input-lg" name="zipcode" placeholder="邮编">
         </div>
         <div class="form-group col-md-4">
-          <label for="career">职业</label>
+          <label for="career">职业<em class="text-danger">*</em></label>
           <select class="form-control input-lg" name="career" placeholder="职业" id="s_career">
             <option></option>
             <option>教师</option>
             <option>金融机构从业人员</option>
-            <option>学者</option>
-            <option>公务员</option>
             <option>学生</option>
             <option>其他</option>
           </select>
         </div>
       </div>
       <div class="row people-wrap finace-people hide">
-        <div class="row">
-          <div class="form-group col-md-6">
-          <label for="unit">单位</label>
-            <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="career_name">职称</label>
-            <input type="text" class="form-control input-lg" name="career_name" placeholder="职称">
-          </div>
+        <div class="form-group col-md-6">
+        <label for="unit">单位<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
         </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label for="work_experience">主要工作经历</label>
-            <textarea class="form-control" name="career_name" rows="3"></textarea>
-          </div>
+        <div class="form-group col-md-6">
+          <label for="career_name">职称<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="career_name" placeholder="职称">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="work_experience">主要工作经历<em class="text-danger">*</em></label>
+          <textarea class="form-control" name="career_name" rows="3"></textarea>
         </div>
       </div>
       <div class="row people-wrap teacher-people hide">
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label for="unit">单位</label>
-            <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="career_name">职称</label>
-            <input type="text" class="form-control input-lg" name="career_name" placeholder="职称">
-          </div>
+        <div class="form-group col-md-6">
+          <label for="unit">单位<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
         </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label for="research">主要研究方向</label>
-            <textarea class="form-control" name="research" rows="3"></textarea>
-          </div>
+        <div class="form-group col-md-6">
+          <label for="career_name">职称<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="career_name" placeholder="职称">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="research">主要研究方向<em class="text-danger">*</em></label>
+          <textarea class="form-control" name="research" rows="3"></textarea>
         </div>
       </div>
       <div class="row people-wrap student-people hide">
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label for="school">学校</label>
-            <input type="text" class="form-control input-lg" name="school" placeholder="学校">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="s_class">年级</label>
-            <select class="form-control input-lg" name="s_class" placeholder="年级">
-              <option>大一</option>
-              <option>大二</option>
-              <option>大三</option>
-              <option>大四</option>
-              <option>研一</option>
-              <option>研二</option>
-              <option>研三</option>
-              <option>研四</option>
-              <option>研五</option>
-            </select>
-          </div>
+        <div class="form-group col-md-6">
+          <label for="school">学校<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="school" placeholder="学校">
         </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label for="department">所学专业</label>
-            <input type="text" class="form-control input-lg" name="department" placeholder="所学专业">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="english">英语水平</label>
-            <input type="text" class="form-control input-lg" name="english" placeholder="所获取的英语证书">
-          </div>
+        <div class="form-group col-md-6">
+          <label for="s_class">年级<em class="text-danger">*</em></label>
+          <select class="form-control input-lg" name="s_class" placeholder="年级">
+            <option>大一</option>
+            <option>大二</option>
+            <option>大三</option>
+            <option>大四</option>
+            <option>研一</option>
+            <option>研二</option>
+            <option>研三</option>
+            <option>研四</option>
+            <option>研五</option>
+          </select>
         </div>
-        <div class="row">
-          <div class="form-group col-md-4">
-            <label for="student_id">学号</label>
-            <input type="text" class="form-control input-lg" name="student_id" placeholder="学号">
-          </div>
-          <div class="form-group col-md-8">
-            <label for="study">个人学习经历</label>
-            <textarea class="form-control" name="study" rows="3"></textarea>
-          </div>
+        <div class="form-group col-md-6">
+          <label for="department">所学专业<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="department" placeholder="所学专业">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="english">英语水平<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="english" placeholder="所获取的英语证书">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="student_id">学号<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="student_id" placeholder="学号">
+        </div>
+        <div class="form-group col-md-8">
+          <label for="study">个人学习经历<em class="text-danger">*</em></label>
+          <textarea class="form-control" name="study" rows="3"></textarea>
         </div>
       </div>
     </form>
