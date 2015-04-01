@@ -181,6 +181,27 @@ input, button, textarea, select {
 .footer-copyright{
   padding: 20px 0 25px;
   color: #b4bbbf;
+  width: 1000px;
+  margin: 0 auto;
+  border-top: 1px solid #f4f7f8;
+}
+.footer-contacts{
+  padding: 20px 0;
+  color:#b4bbbf;
+  line-height: 20px;
+}
+.footer-contacts .c-people,.footer-contacts .c-emails,.footer-contacts .c-address{
+  display: inline-block;
+}
+.footer-contacts .c-people{
+  text-align: right;
+}
+.footer-contacts .c-emails{
+  text-align: left;
+  margin: 0 30px;
+}
+.footer-contacts .c-address{
+  text-align: left;
 }
 .gallery-image img{
     display: block;
