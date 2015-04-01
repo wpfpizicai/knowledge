@@ -151,6 +151,7 @@ module.exports = Controller("Home/BaseController", function(){
         navLinks : navLinks,
         title : "日程安排-中国金融高端培训（2015）"
       })
+      self.display();
     }
 
   };
