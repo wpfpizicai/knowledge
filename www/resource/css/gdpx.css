@@ -145,8 +145,8 @@ body,a{
 .header .zxbm{
   display: inline-block;
   position: absolute;
-  top: 234px;
-  right: 211px;
+  top: 207px;
+  right: 215px;
   width: 100px;
   height: 100px;
 }
@@ -262,9 +262,6 @@ body,a{
   height:260px;
   position:relative;
 }
-.lxwm{
-  height:354px;
-}
 .zxdt .tit,.pxnr .tit,.pxdx .tit,.lxwm .tit{
   color:#31B9E1;
   font-size:18px;
@@ -280,7 +277,7 @@ body,a{
 .rcap{
   position:absolute;
   right:0;
-  bottom:18px;
+  bottom:12px;
   width:120px;
   padding-left:14px;
   font:16px/34px "微软雅黑";
@@ -294,6 +291,10 @@ body,a{
 }
 .lxwm .pink{
   color:#31B9E1;
+}
+.lxwm p .m-email{
+  padding-left: 70px;
+  color: #1d1c1a;
 }
 .nav-logo{
   position: absolute;

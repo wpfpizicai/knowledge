@@ -132,6 +132,10 @@ input, button, textarea, select {
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
 }
+footer{
+  border-top: 1px solid #d4d4d4;
+  width: 100%;
+}
 .footer-sns {
   padding-top:30px;
 }
@@ -288,10 +292,6 @@ form.activity,div.activity{
 }
 img.a-logo{
   margin-top: 4px;
-}
-footer{
-  border-top: 1px solid #d4d4d4;
-  width: 100%;
 }
 .activity .form-control{
   width: 97%;
