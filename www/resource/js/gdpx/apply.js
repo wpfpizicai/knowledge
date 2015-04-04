@@ -1,4 +1,5 @@
 define(function(require,exports,module) {
+    alifenxi.track('提交页面浏览');
     $('input.form-control').on('focus',function(e){
       var that = this;
       $(that).parent().removeClass('has-error')
@@ -12,9 +13,20 @@ define(function(require,exports,module) {
         $('.finace-people.row').removeClass('hide');
       }else if(name == "学生"){
         $('.student-people.row').removeClass('hide');
+      }else if(name == "公务员"){
+        $('.gov-people.row').removeClass('hide');
+      }
+    });
+    $('input[name="optionsRadios"]').on('click',function(e){
+      var c_value = $('input[name="optionsRadios"]:checked').val();
+      if(c_value == 'agree'){
+        $('#submit_btn').removeAttr('disabled');
+      }else{
+        $('#submit_btn').attr('disabled',true);
       }
     })
     $('#submit_btn').on('click',function(e) {
+      alifenxi.track('提交点击');
       var values = {};
       $.each($('#activity_form').serializeArray(), function(i, field) {
           values[field.name] = field.value;

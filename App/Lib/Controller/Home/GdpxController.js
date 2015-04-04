@@ -22,6 +22,9 @@ module.exports = Controller("Home/BaseController", function(){
         if(!data.atime){
           data.atime = getDateTime()
         }
+        if(data.optionsRadios != "agree"){
+          self.error("对不起，请先阅读服务条款，并选择同意！")
+        }
         return D('ActivityUser').add(data).then(function(data){
           self.end({
             err :0,

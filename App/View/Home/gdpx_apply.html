@@ -6,6 +6,7 @@
 <body>
   <%- include ../a_header.html %>
   <div class="container">
+    <h1 class="text-center">2015高端培训在线报名</h1>
     <form role="form" class="form-horizontal activity" id="activity_form">
       <div class="row">
         <div class="form-group col-md-4">
@@ -98,6 +99,20 @@
           <textarea class="form-control" name="career_name" rows="3"></textarea>
         </div>
       </div>
+      <div class="row people-wrap gov-people hide">
+        <div class="form-group col-md-6">
+        <label for="unit">单位<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="career_name">职称<em class="text-danger">*</em></label>
+          <input type="text" class="form-control input-lg" name="career_name" placeholder="职称">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="work_experience">主要工作经历<em class="text-danger">*</em></label>
+          <textarea class="form-control" name="career_name" rows="3"></textarea>
+        </div>
+      </div>
       <div class="row people-wrap teacher-people hide">
         <div class="form-group col-md-6">
           <label for="unit">单位<em class="text-danger">*</em></label>
@@ -148,11 +163,28 @@
           <textarea class="form-control" name="study" rows="3"></textarea>
         </div>
       </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="study">服务条款<em class="text-danger">*</em></label>
+          <textarea class="form-control" cols="30" rows="3">服务条款
+欢迎申请参加由中国金融培训中心举办的中国金融高端培训（2015）。请您（下列简称为“学员”）仔细阅读以下全部内容。如学员不同意本服务条款任何内容，请勿注册报名中国金融高端培训（2015）。如学员通过加入注册程序并勾选“我同意中国金融高端培训服务条款”，即表示学员与中国金融培训中心已达成协议，自愿接受本服务条款的所有内容。此后，学员不得以未阅读本服务条款内容作任何形式的抗辩。
+1、学员自愿注册报名参加由中国金融培训中心主办的中国金融高端培训（2015），承诺向主办方提交的相关报名信息真实有效。如学员提供的注册资料不准确，不真实，含有违法或不良信息的，中国金融培训中心有权不予以注册，并保留终止学员参加培训的权利。对于冒用他人名义注册报名的，中国金融培训中心有权取消其报名，并向相关部门进行通报。
+2、中国金融培训中心将会采取合理的措施保护学员报名信息，除法律或有法律赋予权限的政府部门要求或您同意等原因外，中国金融培训中心不向第三方公开、透露您个人信息。因学员保管疏漏或黑客行为导致学员信息泄露，中国金融培训中心不承担任何责任。
+3、学员如成功入选参加培训，将承诺在培训班期间严格遵守国家各项法律法规及规章制度，不做任何违法违纪的事情，并在培训期间和之后不发表与本次培训主题相关的不恰当言论。否则，后果自负。
+4、中国金融培训中心承担培训期间参训学员在培训会场内的安全与管理。学员应遵照培训主办单位的相关要求，配合做好培训期间相关安排。由于未遵守中国金融培训中心相关管理要求导致的人身、财产安全等损失，以及在非培训期间或培训会场以外发生的一切安全事故，由学员自行承担一切责任。
+5、如出现纠纷，双方应尽量友好协商解决；协商不成时，任何一方均可向中国金融培训中心所在地的人民法院提起诉讼。
+          </textarea>
+        </div>
+        <div class="form-group col-md-12">
+          <label><input type="radio" name="optionsRadios" id="options_agree" value="agree">已阅读，同意</label>
+          <label><input type="radio" name="optionsRadios" id="options_disagree" value="disagree">不同意</label>
+        </div>
+      </div>
     </form>
     <div class="container my-buttons">
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-primary btn-lg" id="submit_btn">提交</button>
+          <button class="btn btn-primary btn-lg" id="submit_btn" disabled>提交</button>
           <a class="btn btn-default btn-lg" href="/activity" target="_self">返回</a>
         </div>
       </div>

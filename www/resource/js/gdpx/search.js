@@ -1,4 +1,5 @@
 define(function(require,exports,module) {
+  alifenxi.track('状态查询页面浏览');
   function testType(type, value) {
     //正则表达式
     var regular = {};
@@ -28,6 +29,7 @@ define(function(require,exports,module) {
     return regular[type].test(value);
   };
     $('#search_btn').on('click',function(e) {
+      alifenxi.track('搜索按钮点击');
       var input_data = $('#search_input').val();
       var data = {};
       var status = ['正在审核中...','恭喜您通过，请注意查收邮箱！','对不起，由于人数限制，您未通过，感谢您的持续关注！'];
