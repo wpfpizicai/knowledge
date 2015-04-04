@@ -61,7 +61,40 @@
         </div>
         <h2 class="indexH2" id="gdlt_hg">往期回顾</h2>
         <div class="wqhg clearfix">
-
+          <div class="banner">
+            <ul>
+              <li>
+                <img src="/resource/img/2013/lbtbl.jpg" alt="往期回顾" title="哈佛大学教授罗伯特·巴罗为2013年中国金融高端培训讲授《金融市场、金融危机与宏观危机管理政策》课程">
+                <img src="/resource/img/2013/qjt.jpg" alt="往期回顾" title="2013年中国金融高端培训全景图">
+                <img src="/resource/img/2013/tmsstj.jpg" alt="往期回顾" title="纽约大学教授、2011年诺贝尔经济学奖得主托马斯·萨金特为2013年中国金融高端培训讲授《债务危机与全球经济展望》课程">
+                <img src="/resource/img/2013/xyqd.jpg" alt="往期回顾" title="学员签到">
+              </li>
+              <li>
+                <img src="/resource/img/2013/xyhd.jpg" alt="往期回顾" title="学员提问">
+                <img src="/resource/img/2013/mjm.jpg" alt="往期回顾" title="民生银行董事长洪琦为2013年中国金融高端培训授课">
+                <img src="/resource/img/2013/yg.jpg" alt="往期回顾" title="中国人民银行副行长易纲为2013年中国金融高端培训授课">
+                <img src="/resource/img/2014/gs.jpg" alt="往期回顾" title="中国工商银行谷澍副行长为2014年中国金融高端培训授课">
+              </li>
+              <li>
+                <img src="/resource/img/2014/lb.jpg" alt="往期回顾" title="中国人民银行货币政策二司李波司长为2014年高端培训授课">
+                <img src="/resource/img/2014/lbt.jpg" alt="往期回顾" title="美国达拉斯联储副主席约翰杜卡">
+                <img src="/resource/img/2014/lbtxl.jpg" alt="往期回顾" title="罗贝特.席勒教授与高校师生进行学术座谈.">
+                <img src="/resource/img/2014/ljj.jpg" alt="往期回顾" title="招商银行刘建军副行长为2014年中国金融高端培训授课">
+              </li>
+              <li>
+                <img src="/resource/img/2014/mdl.jpg" alt="往期回顾" title="人民银行原副行长马德伦为2014年高端培训授课">
+                <img src="/resource/img/2014/mna.jpg" alt="往期回顾" title="美国高盛集团全球金融机构部副主席约翰马尼奥为中国2014年金融高端培训授课">
+                <img src="/resource/img/2014/qj.jpg" alt="往期回顾" title="2014年中国金融高端培训全景">
+                <img src="/resource/img/2014/ssc.jpg" alt="往期回顾" title="中国人民银行调查统计司司长盛松成为2014年高端培训授课">
+              </li>
+              <li>
+                <img src="/resource/img/2014/wcz.jpg" alt="往期回顾" title="中国金融培训中心主任万存知主持中国金融高端培训开班式">
+                <img src="/resource/img/2014/xl.jpg" alt="往期回顾" title="美国耶鲁大学教授，2013年诺贝尔经济学奖得主罗贝特.席勒为2014年中国金融高端培训讲授《金融市场波动、金融稳定与监管》课程">
+                <img src="/resource/img/2014/yg.jpg" alt="往期回顾" title="中国人民银行副行长易纲为2014年中国金融高端培训讲授《当前经济形势与金融改革》专题讲座">
+                <img src="/resource/img/2014/yhdc.jpg" alt="往期回顾" title="约翰.杜卡为2014年中国金融高端培训授课">
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="contentRight">
@@ -99,9 +132,19 @@
       </div>
     </div>
   </div>
-  <div class="rcap">
-
-  </div>
+  <div class="rcap"></div>
   <%- include ../a_footer.html %>
+  <script src="//unslider.com/unslider.js"></script>
+  <script>
+    $(function() {
+      $('.banner').unslider({
+        speed: 500,
+        delay: 3000,
+        keys: true,
+        dots: false,
+        fluid: false
+      });
+    });
+  </script>
 </body>
 </html>

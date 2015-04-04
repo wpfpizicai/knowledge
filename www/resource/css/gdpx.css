@@ -339,6 +339,15 @@ body,a{
 .pxdd p{
   margin: 5px 0;
 }
+.banner { position: relative; overflow: auto; }
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+.banner ul li img{
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+}
 @font-face {
   font-family: 'icomoon';
   src:url('../font/icomoon.eot?qyfiyv');
