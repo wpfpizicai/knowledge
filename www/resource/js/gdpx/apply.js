@@ -1,5 +1,16 @@
 define(function(require,exports,module) {
     alifenxi.track('提交页面浏览');
+    if($.cookie('has_see_bmxz')){
+      $('div.online-bm').show()
+    }else{
+      $('div.bmxz').show();
+      $('#has_see_bmxz').on('click',function(e){
+        window.scroll && window.scroll(0,0);
+        $('div.bmxz').hide();
+        $('div.online-bm').show();
+        $.cookie('has_see_bmxz',1);
+      })
+    }
     $('input.form-control').on('focus',function(e){
       var that = this;
       $(that).parent().removeClass('has-error')
@@ -33,12 +44,14 @@ define(function(require,exports,module) {
       });
       if(!values['username']){
         $('input[name="username"]').parent().addClass('has-error')
-      }
-      else if(!values['email']){
+      }else if(!values['idcardnum']){
+        $('input[name="idcardnum"]').parent().addClass('has-error')
+      }else if(!values['email']){
         $('input[name="email"]').parent().addClass('has-error')
-      }
-      else if(!values['phone']){
-        $('input[name="phone"]').parent().addClass('has-error')
+      }else if(!values['mobile']){
+        $('input[name="mobile"]').parent().addClass('has-error')
+      }else if(!values['career']){
+        $('select[name="career"]').parent().addClass('has-error')
       }else{
         $.post("/gdpx/apply",values,function(result){
           if(result.err == 0){
