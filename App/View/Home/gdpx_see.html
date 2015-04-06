@@ -22,16 +22,17 @@
           </tr>
         </thead>
         <tbody>
+          <% user_status=['审核中','通过','不通过']%>
           <%users.forEach(function(item,i){%>
             <tr data-id="<%-item.id%>">
               <td><a href="/gdpx/item/?id=<%-item.id%>" target="_blank"><%-(i+1)%></a></td>
-              <td><%-item.username%></td>
-              <td><%-item.email%></td>
-              <td><%-item.phone%></td>
-              <td><%-item.career%></td>
-              <td><%-item.unit%></td>
-              <td><%-item.department%></td>
-              <td><%-item.stime%></td>
+              <td><%=item.username%></td>
+              <td><%=item.email%></td>
+              <td><%=item.phone%></td>
+              <td><%=item.career%></td>
+              <td><%=item.unit%></td>
+              <td><%=item.stime%></td>
+              <td><%=user_status[item.status]%></td>
             </tr>
           <%})%>
         </tbody>
