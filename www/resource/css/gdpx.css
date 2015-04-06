@@ -339,7 +339,44 @@ body,a{
 .pxdd p{
   margin: 5px 0;
 }
-.banner { position: relative; overflow: auto; }
+.wqhg{
+  position: relative;
+}
+.wqhg a{
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  position: absolute;
+  width: 40px;
+  color: #FFF;
+  top: 40px;
+  background-color: rgba(0,0,0,.3);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4C000000', EndColorStr='#4C000000');
+}
+.wqhg a.prev{
+  left: 5px;
+}
+.wqhg a.next{
+  right: 16px;
+}
+.wqhg a i{
+  display: block;
+  margin: 8px 0 0 12px;
+  cursor: pointer;
+  width: 15px;
+  height: 23px;
+  overflow: hidden;
+  background-image: url('../img/n_sprite.png');
+  background-repeat: no-repeat;
+}
+.wqhg a .s-prev{
+  background-position: -1px -26px
+}
+.wqhg a .s-next{
+  background-position: -2px 0px;
+}
+.banner { position: relative; overflow: auto; margin-left: 20px;}
 .banner li { list-style: none; }
 .banner ul li { float: left; }
 .banner ul li img{

@@ -22,8 +22,8 @@
           <input type="text" class="form-control input-lg" name="username" placeholder="姓名">
         </div>
         <div class="form-group col-md-4">
-          <label for="nation" class="control-label">民族<em class="text-danger"></em></label>
-          <input type="text" class="form-control input-lg" name="nation" placeholder="民族">
+          <label for="idcardnum" class="control-label">身份证号码（护照号码）<em class="text-danger">*(必填)</em></label>
+          <input type="text" class="form-control input-lg" name="idcardnum" placeholder="身份证号码 或者 护照号码">
         </div>
         <div class="form-group col-md-4">
           <label for="sex" class="control-label">性别<em class="text-danger">*(必填)</em></label>
@@ -35,19 +35,30 @@
       </div>
       <div class="row">
         <div class="form-group col-md-4">
-          <label for="idcardnum" class="control-label">身份证号码（护照号码）<em class="text-danger">*(必填)</em></label>
-          <input type="text" class="form-control input-lg" name="idcardnum" placeholder="身份证号码（护照号码）">
-        </div>
-        <div class="form-group col-md-4">
           <label for="email" class="control-label">邮箱<em class="text-danger">*(必填)</em></label>
           <input type="text" class="form-control input-lg" name="email" placeholder="邮箱">
         </div>
         <div class="form-group col-md-4">
-          <label for="mobile">手机号码<em class="text-danger">*</em></label>
+          <label for="mobile">手机号码<em class="text-danger">*(必填)</em></label>
           <input type="text" class="form-control input-lg" name="mobile" placeholder="手机号码">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="career">职业<em class="text-danger">*(必填)</em></label>
+          <select class="form-control input-lg" name="career" placeholder="职业" id="s_career">
+            <option></option>
+            <option>公务员</option>
+            <option>金融机构从业人员</option>
+            <option>教师</option>
+            <option>学生</option>
+            <option>其他</option>
+          </select>
         </div>
       </div>
       <div class="row">
+        <div class="form-group col-md-4">
+          <label for="nation" class="control-label">民族<em class="text-danger"></em></label>
+          <input type="text" class="form-control input-lg" name="nation" placeholder="民族">
+        </div>
         <div class="form-group col-md-4">
           <label for="phone">联系电话<em class="text-danger"></em></label>
           <input type="text" class="form-control input-lg" name="phone" placeholder="联系电话">
@@ -55,6 +66,16 @@
         <div class="form-group col-md-4">
           <label for="fax">传真</label>
           <input type="text" class="form-control input-lg" name="fax" placeholder="传真">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="address">通讯地址<em class="text-danger"></em></label>
+          <input type="text" class="form-control input-lg" name="address" placeholder="通讯地址">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="zipcode">邮编<em class="text-danger"></em></label>
+          <input type="text" class="form-control input-lg" name="zipcode" placeholder="邮编">
         </div>
         <div class="form-group col-md-4">
           <label for="education">学历<em class="text-danger"></em></label>
@@ -72,27 +93,6 @@
           <textarea class="form-control" name="result" rows="3"></textarea>
         </div>
       </div>
-      <div class="row">
-        <div class="form-group col-md-4">
-          <label for="address">通讯地址<em class="text-danger"></em></label>
-          <input type="text" class="form-control input-lg" name="address" placeholder="通讯地址">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="zipcode">邮编<em class="text-danger"></em></label>
-          <input type="text" class="form-control input-lg" name="zipcode" placeholder="邮编">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="career">职业<em class="text-danger">*(必填)</em></label>
-          <select class="form-control input-lg" name="career" placeholder="职业" id="s_career">
-            <option></option>
-            <option>公务员</option>
-            <option>金融机构从业人员</option>
-            <option>教师</option>
-            <option>学生</option>
-            <option>其他</option>
-          </select>
-        </div>
-      </div>
       <div class="row people-wrap finace-people hide">
         <div class="form-group col-md-6">
         <label for="unit">单位<em class="text-danger"></em></label>
@@ -108,6 +108,20 @@
         </div>
       </div>
       <div class="row people-wrap gov-people hide">
+        <div class="form-group col-md-6">
+        <label for="unit">单位<em class="text-danger"></em></label>
+          <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="career_name">职称<em class="text-danger"></em></label>
+          <input type="text" class="form-control input-lg" name="career_name" placeholder="职称">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="work_experience">主要工作经历<em class="text-danger"></em></label>
+          <textarea class="form-control" name="career_name" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="row people-wrap else-people hide">
         <div class="form-group col-md-6">
         <label for="unit">单位<em class="text-danger"></em></label>
           <input type="text" class="form-control input-lg" name="unit" placeholder="单位">
@@ -150,8 +164,10 @@
             <option>研一</option>
             <option>研二</option>
             <option>研三</option>
-            <option>研四</option>
-            <option>研五</option>
+            <option>博一</option>
+            <option>博二</option>
+            <option>博三</option>
+            <option>博士后</option>
           </select>
         </div>
         <div class="form-group col-md-6">
@@ -193,7 +209,7 @@
       <div class="row">
         <div class="col-md-6">
           <button class="btn btn-primary btn-lg" id="submit_btn" title="请先阅读服务条款！">提交</button>
-          <a class="btn btn-default btn-lg" href="/gdpx" target="_self">返回</a>
+          <a class="btn btn-default btn-lg" href="http://www.chinacft.org/gdpx/" target="_self">返回</a>
         </div>
       </div>
     </div>

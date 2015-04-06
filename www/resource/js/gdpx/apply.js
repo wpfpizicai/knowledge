@@ -57,6 +57,8 @@ define(function(require,exports,module) {
         $('.student-people.row').removeClass('hide');
       }else if(name == "公务员"){
         $('.gov-people.row').removeClass('hide');
+      }else if(name == "其他"){
+        $('.else-people.row').removeClass('hide');
       }
     });
     var is_agree = false;
