@@ -143,12 +143,14 @@ body,a{
   left: 0;
 }
 .header .zxbm{
-  display: inline-block;
+  display: block;
   position: absolute;
-  top: 207px;
+  top: 210px;
   right: 215px;
   width: 100px;
   height: 100px;
+  background:url(about:blank);
+  z-index: 10;
 }
 .bannerInfo{
   position:absolute;
