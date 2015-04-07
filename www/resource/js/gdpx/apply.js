@@ -39,7 +39,7 @@ define(function(require,exports,module) {
         scroll(0);
         $('div.bmxz').hide();
         $('div.online-bm').show();
-        $.cookie('has_see_bmxz',1,{expires: new Date().getTime() + 365* 24 * 60 * 60 * 1000});
+        $.cookie('has_see_bmxz',1,{expires: 365});
       })
     }
     $('input.form-control').on('focus',function(e){
