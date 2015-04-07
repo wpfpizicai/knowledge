@@ -64,6 +64,12 @@
           <input readonly type="text" class="form-control input-lg" name="career" placeholder="邮编" value="<%= user.career%>">
         </div>
       </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="result">主要学术成果</label>
+          <textarea class="form-control" name="result" rows="3"><%=user.result%></textarea>
+        </div>
+      </div>
       <div class="row people-wrap finace-people<% if(user.career == '金融机构从业人员' || user.career == '公务员' || user.career == '其他'){%><%}else{%> hide<%}%>">
         <div class="form-group col-md-4">
         <label for="unit">单位</label>
