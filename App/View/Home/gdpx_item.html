@@ -6,48 +6,48 @@
 <body>
   <%- include ../a_header.html %>
   <div class="container">
-    <h1 class="text-center">2015高端培训在线报名学员查看</h1>
+    <h1 class="text-center">2015年中国金融高端培训在线报名学员查看</h1>
     <form role="form" class="form-horizontal activity" id="activity_form" data-id="<%=user.id%>" data-status="<%=user.status%>">
       <div class="row">
         <div class="form-group col-md-4">
           <label for="username" class="control-label">姓名</label>
-          <input readonly type="text" class="form-control input-lg" name="username" placeholder="姓名" value="<%- user.username%>">
+          <input readonly type="text" class="form-control input-lg" name="username" placeholder="姓名" value="<%= user.username%>">
         </div>
         <div class="form-group col-md-4">
           <label for="nation" class="control-label">民族</label>
-          <input readonly type="text" class="form-control input-lg" name="nation" placeholder="民族" value="<%- user.nation%>">
+          <input readonly type="text" class="form-control input-lg" name="nation" placeholder="民族" value="<%= user.nation%>">
         </div>
         <div class="form-group col-md-4">
           <label for="sex" class="control-label">性别</label>
-          <input readonly type="text" class="form-control input-lg" name="sex" placeholder="性别" value="<%- user.sex%>">
+          <input readonly type="text" class="form-control input-lg" name="sex" placeholder="性别" value="<%= user.sex%>">
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-4">
           <label for="idcardnum" class="control-label">身份证号码（护照号码）</label>
-          <input readonly type="text" class="form-control input-lg" name="idcardnum" placeholder="身份证号码（护照号码）" value="<%- user.idcardnum%>">
+          <input readonly type="text" class="form-control input-lg" name="idcardnum" placeholder="身份证号码（护照号码）" value="<%=user.idcardnum%>">
         </div>
         <div class="form-group col-md-4">
           <label for="email" class="control-label">邮箱</label>
-          <input readonly type="text" class="form-control input-lg" name="email" placeholder="邮箱" value="<%- user.email%>">
+          <input readonly type="text" class="form-control input-lg" name="email" placeholder="邮箱" value="<%= user.email%>">
         </div>
         <div class="form-group col-md-4">
           <label for="mobile">手机号码</label>
-          <input readonly type="text" class="form-control input-lg" name="mobile" placeholder="手机号码" value="<%- user.mobile%>">
+          <input readonly type="text" class="form-control input-lg" name="mobile" placeholder="手机号码" value="<%= user.mobile%>">
         </div>
       </div>
       <div class="row">
         <div class="form-group col-md-4">
           <label for="phone">联系电话</label>
-          <input readonly type="text" class="form-control input-lg" name="phone" placeholder="联系电话" value="<%- user.phone%>">
+          <input readonly type="text" class="form-control input-lg" name="phone" placeholder="联系电话" value="<%= user.phone%>">
         </div>
         <div class="form-group col-md-4">
           <label for="fax">传真</label>
-          <input readonly type="text" class="form-control input-lg" name="fax" placeholder="传真" value="<%- user.fax%>">
+          <input readonly type="text" class="form-control input-lg" name="fax" placeholder="传真" value="<%= user.fax%>">
         </div>
         <div class="form-group col-md-4">
           <label for="education">学历</label>
-          <input readonly type="text" class="form-control input-lg" name="fax" placeholder="学历" value="<%- user.education%>">
+          <input readonly type="text" class="form-control input-lg" name="fax" placeholder="学历" value="<%= user.education%>">
         </div>
       </div>
       <div class="row">
@@ -61,10 +61,10 @@
         </div>
         <div class="form-group col-md-4">
           <label for="career">职业</label>
-          <input readonly type="text" class="form-control input-lg" name="career" placeholder="邮编" value="<%- user.career%>">
+          <input readonly type="text" class="form-control input-lg" name="career" placeholder="邮编" value="<%= user.career%>">
         </div>
       </div>
-      <div class="row people-wrap finace-people<% if(user.career == '金融机构从业人员'){%><%}else{%> hide<%}%>">
+      <div class="row people-wrap finace-people<% if(user.career == '金融机构从业人员' || user.career == '公务员' || user.career == '其他'){%><%}else{%> hide<%}%>">
         <div class="form-group col-md-4">
         <label for="unit">单位</label>
           <input readonly type="text" class="form-control input-lg" name="unit" placeholder="单位" value="<%-user.unit%>">
@@ -99,19 +99,23 @@
         </div>
         <div class="form-group col-md-4">
           <label for="s_class">年级</label>
-          <input readonly type="text" class="form-control input-lg" name="s_class" placeholder="年级" value="<%-user.s_class%>">
+          <input readonly type="text" class="form-control input-lg" name="s_class" placeholder="年级" value="<%=user.s_class%>">
         </div>
         <div class="form-group col-md-4">
           <label for="department">所学专业</label>
-          <input readonly type="text" class="form-control input-lg" name="department" placeholder="所学专业" value="<%-user.department%>">
+          <input readonly type="text" class="form-control input-lg" name="department" placeholder="所学专业" value="<%=user.department%>">
         </div>
         <div class="form-group col-md-4">
           <label for="english">英语水平</label>
-          <input readonly type="text" class="form-control input-lg" name="english" placeholder="所获取的英语证书" value="<%-user.english%>">
+          <input readonly type="text" class="form-control input-lg" name="english" placeholder="所获取的英语证书" value="<%=user.english%>">
         </div>
         <div class="form-group col-md-4">
           <label for="student_id">学号</label>
           <input readonly type="text" class="form-control input-lg" name="student_id" placeholder="学号" value="<%-user.student_id%>">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="student_ismeeting">是否愿意参加5月23日晚与达莱尔•达菲的座谈会</label>
+          <input readonly type="text" class="form-control input-lg" name="student_ismeeting" placeholder="是否参加座谈会" value="<% if(user.ismeeting == 'agree'){%>参加<%}else{%> 不参加<%}%>">
         </div>
         <div class="form-group col-md-12">
           <label for="study">个人学习经历</label>
