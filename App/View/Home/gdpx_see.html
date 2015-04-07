@@ -26,7 +26,7 @@
           <%users.forEach(function(item,i){%>
             <tr data-id="<%-item.id%>">
               <td><a href="/gdpx/item/?id=<%-item.id%>" target="_blank"><%-(i+1)%></a></td>
-              <td><%=item.username%></td>
+              <td><a href="/gdpx/item/?id=<%-item.id%>" target="_blank"><%=item.username%></a></td>
               <td><%=item.email%></td>
               <td><%=item.phone%></td>
               <td><%=item.career%></td>
