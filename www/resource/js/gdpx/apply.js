@@ -28,7 +28,8 @@ define(function(require,exports,module) {
       return regular[type].test(value);
     };
     function scroll (x){
-      window.scroll && window.scroll(x,0);
+      x = (x < 0 ? 0 : x)
+      window.scroll && window.scroll(0,x);
     }
     alifenxi.track('提交页面浏览');
     if($.cookie('has_see_bmxz')){
@@ -82,7 +83,7 @@ define(function(require,exports,module) {
       cansubmit = false;
       $(selector).parent().addClass('has-error');
       var offset = $(selector).parent().offset();
-      scroll(offset.top);
+      scroll(offset.top - 71);
     }
     $('#submit_btn').on('click',function(e) {
       cansubmit = true;
@@ -104,7 +105,7 @@ define(function(require,exports,module) {
         cansubmit = false;
         $('input[name="sex"]').parent().parent().addClass('has-error');
         var offset = $('input[name="sex"]').parent().parent().offset();
-        scroll(offset.top);
+        scroll(offset.top - 71);
       }else if(!values['idcardnum']){
         checkScroll('idcardnum');
       }else if(!values['email'] || !testType('email',values['email'])){
