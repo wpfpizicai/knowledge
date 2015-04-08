@@ -44,7 +44,12 @@ define(function(require,exports,module) {
       }
       $.post('/gdpx/search',data,function(result){
         if(result.errno == 0){
-          alert(status[result.data.status - 0])
+          if(result.data.status){
+            alert(status[result.data.status - 0])
+          }else{
+            alert("请输入正确的手机号码或者邮箱地址！")
+          }
+
         }else{
           alert(result.errmsg)
         }
