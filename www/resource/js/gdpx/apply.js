@@ -72,47 +72,97 @@ define(function(require,exports,module) {
         is_agree = false;
         $('#submit_btn').attr('title',"请先阅读服务条款！");
       }
-    })
+    });
+    var cansubmit = true;
+    function checkScroll(name,label){
+      if(!label){
+        label = 'input'
+      };
+      var selector = label + '[name="' + name + '"]';
+      cansubmit = false;
+      $(selector).parent().addClass('has-error');
+      var offset = $(selector).parent().offset();
+      scroll(offset.top);
+    }
     $('#submit_btn').on('click',function(e) {
+      cansubmit = true;
+      $('.has-error','#activity_form').removeClass('has-error')
       if(!is_agree){
         $('#textarea_fwtk').parent().addClass('has-error');
         return;
       }
+
       alifenxi.track('提交点击');
       var values = {};
+
       $.each($('#activity_form').serializeArray(), function(i, field) {
           values[field.name] = field.value;
       });
       if(!values['username']){
-        $('input[name="username"]').parent().addClass('has-error');
-        var offset = $('input[name="username"]').parent().offset();
-        scroll(offset.top, offset.left);
+        checkScroll('username');
       }else if(!values['sex']){
+        cansubmit = false;
         $('input[name="sex"]').parent().parent().addClass('has-error');
         var offset = $('input[name="sex"]').parent().parent().offset();
         scroll(offset.top);
       }else if(!values['idcardnum']){
-        $('input[name="idcardnum"]').parent().addClass('has-error')
-        var offset = $('input[name="idcardnum"]').parent().offset();
-        scroll(offset.top);
+        checkScroll('idcardnum');
       }else if(!values['email'] || !testType('email',values['email'])){
-        $('input[name="email"]').parent().addClass('has-error');
-        var offset = $('input[name="email"]').parent().offset();
-        scroll(offset.top);
+        checkScroll('email');
       }else if(!values['mobile'] || !testType('num',values['mobile'])){
-        $('input[name="mobile"]').parent().addClass('has-error');
-        var offset = $('input[name="mobile"]').parent().offset();
-        scroll(offset.top);
+        checkScroll('mobile');
       }else if(!values['career']){
-        $('select[name="career"]').parent().addClass('has-error');
-        var offset = $('input[name="career"]').parent().offset();
-        scroll(offset.top);
-      }else{
-        $.post("/gdpx/apply",values,function(result){
-          if(result.err == 0){
-            alert('注册成功!')
-          }
-        },'json')
+        checkScroll('career', 'select');
+      }else if(!values['address']){
+        checkScroll('address');
+      }else if(!values['zipcode']){
+        checkScroll('zipcode');
+      }else if(!values['education']){
+        checkScroll('education', 'select');
+      }else if(!values['result']){
+        checkScroll('result','textarea');
       }
+      if(cansubmit){
+        if(values['career'] == "公务员" || values['career'] == "金融机构从业人员" || values['career'] == "其他"){
+          values['unit'] = $('input[name="unit"]','.finace-people.row').val();
+          values['career_name'] = $('input[name="career_name"]','.finace-people.row').val();
+          values['work_experience'] = $('textarea[name="work_experience"]','.finace-people.row').val();
+          if(!values['unit']){
+            checkScroll('unit');
+          }else if(!values['career_name']){
+            checkScroll('career_name');
+          }else if(!values['work_experience']){
+            checkScroll('work_experience','textarea');
+          }
+        }else if(values['career'] == "教师"){
+          values['unit'] = $('input[name="unit"]','.teacher-people.row').val();
+          values['career_name'] = $('input[name="career_name"]','.teacher-people.row').val();
+          if(!values['unit']){
+            checkScroll('unit');
+          }else if(!values['career_name']){
+            checkScroll('career_name');
+          }else if(!values['research']){
+            checkScroll('research','textarea');
+          }
+        }else if(values['career'] == "学生"){
+          if(!values['school']){
+            checkScroll('school');
+          }else if(!values['s_class']){
+            checkScroll('s_class','select');
+          }else if(!values['department']){
+            checkScroll('department');
+          }else if(!values['english']){
+            checkScroll('english');
+          }else if(!values['study']){
+            checkScroll('study','textarea');
+          }
+        }
+      }
+
+      cansubmit && $.post("/gdpx/apply",values,function(result){
+        if(result.err == 0){
+          alert('注册成功!')
+        }
+      },'json')
     })
 })
