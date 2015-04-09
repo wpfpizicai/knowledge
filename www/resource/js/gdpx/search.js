@@ -44,7 +44,7 @@ define(function(require,exports,module) {
       }
       $.post('/gdpx/search',data,function(result){
         if(result.errno == 0){
-          if(result.data.status){
+          if(result.data.username){
             alert(status[result.data.status - 0])
           }else{
             alert("请输入正确的手机号码或者邮箱地址！")
