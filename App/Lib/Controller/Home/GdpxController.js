@@ -54,7 +54,7 @@ module.exports = Controller("Home/BaseController", function(){
             return self.redirect("/login");
           }
         }else{
-          var users = D('ActivityUser').page(self.get('page')).countSelect().then(function(data){
+          var users = D('ActivityUser').order('atime ASC').page(self.get('page')).countSelect().then(function(data){
             data.data = data.data.map(function(item){
               item.stime = getDateTime(item.atime);
               return item;
