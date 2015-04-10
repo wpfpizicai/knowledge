@@ -120,6 +120,11 @@ define(function(require,exports,module) {
         checkScroll('zipcode');
       }else if(!values['education']){
         checkScroll('education', 'select');
+      }else if(!values['attend_before']){
+        cansubmit = false;
+        $('input[name="attend_before"]').parent().parent().addClass('has-error');
+        var offset = $('input[name="attend_before"]').parent().parent().offset();
+        scroll(offset.top - 71);
       }else if(!values['result']){
         checkScroll('result','textarea');
       }
@@ -127,21 +132,27 @@ define(function(require,exports,module) {
         if(values['career'] == "公务员" || values['career'] == "金融机构从业人员" || values['career'] == "其他"){
           values['unit'] = $('input[name="unit"]','.finace-people.row').val();
           values['career_name'] = $('input[name="career_name"]','.finace-people.row').val();
+          values['english'] = $('input[name="english"]','.finace-people.row').val();
           values['work_experience'] = $('textarea[name="work_experience"]','.finace-people.row').val();
           if(!values['unit']){
             checkScroll('unit');
           }else if(!values['career_name']){
             checkScroll('career_name');
+          }else if(!values['english']){
+            checkScroll('english');
           }else if(!values['work_experience']){
             checkScroll('work_experience','textarea');
           }
         }else if(values['career'] == "教师"){
           values['unit'] = $('input[name="unit"]','.teacher-people.row').val();
           values['career_name'] = $('input[name="career_name"]','.teacher-people.row').val();
+          values['english'] = $('input[name="english"]','.teacher-people.row').val();
           if(!values['unit']){
             checkScroll('unit');
           }else if(!values['career_name']){
             checkScroll('career_name');
+          }else if(!values['english']){
+            checkScroll('english');
           }else if(!values['research']){
             checkScroll('research','textarea');
           }
