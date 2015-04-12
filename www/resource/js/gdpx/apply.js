@@ -27,6 +27,7 @@ define(function(require,exports,module) {
       regular['truDomain'] = new RegExp(/^((https|http|ftp|rtsp|mms)?:\/\/)?([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/);
       return regular[type].test(value);
     };
+    var s_time = new Date().getTime();
     function scroll (x){
       x = (x < 0 ? 0 : x)
       window.scroll && window.scroll(0,x);
@@ -84,12 +85,18 @@ define(function(require,exports,module) {
       $(selector).parent().addClass('has-error');
       var offset = $(selector).parent().offset();
       scroll(offset.top - 71);
+      alifenxi.track('提交出错',{
+        err_type : name
+      });
     }
     $('#submit_btn').on('click',function(e) {
       cansubmit = true;
       $('.has-error','#activity_form').removeClass('has-error')
       if(!is_agree){
         $('#textarea_fwtk').parent().addClass('has-error');
+        alifenxi.track('提交出错',{
+          err_type : 'fwtk'
+        })
         return;
       }
 
@@ -106,6 +113,9 @@ define(function(require,exports,module) {
         $('input[name="sex"]').parent().parent().addClass('has-error');
         var offset = $('input[name="sex"]').parent().parent().offset();
         scroll(offset.top - 71);
+        alifenxi.track('提交出错',{
+          err_type: 'sex'
+        })
       }else if(!values['idcardnum']){
         checkScroll('idcardnum');
       }else if(!values['email'] || !testType('email',values['email'])){
@@ -125,6 +135,9 @@ define(function(require,exports,module) {
         $('input[name="attend_before"]').parent().parent().addClass('has-error');
         var offset = $('input[name="attend_before"]').parent().parent().offset();
         scroll(offset.top - 71);
+        alifenxi.track('提交出错',{
+          err_type : "attend_before"
+        })
       }else if(!values['result']){
         checkScroll('result','textarea');
       }
@@ -173,6 +186,9 @@ define(function(require,exports,module) {
 
       cansubmit && $.post("/gdpx/apply",values,function(result){
         if(result.err == 0){
+          alifenxi.track('注册成功',{
+            process_time : Math.floor((new Date().getTime() - s_time)/1000)
+          })
           alert('注册成功!')
         }
       },'json')
