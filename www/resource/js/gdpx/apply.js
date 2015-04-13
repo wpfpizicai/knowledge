@@ -104,7 +104,7 @@ define(function(require,exports,module) {
       var values = {};
 
       $.each($('#activity_form').serializeArray(), function(i, field) {
-          values[field.name] = field.value;
+          values[field.name] = $.trim(field.value);
       });
       if(!values['username']){
         checkScroll('username');
