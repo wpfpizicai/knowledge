@@ -84,7 +84,7 @@ define(function(require,exports,module) {
       cansubmit = false;
       $(selector).parent().addClass('has-error');
       var offset = $(selector).parent().offset();
-      scroll(offset.top - 71);
+      scroll(offset.top - 71 - ((name=="unit" || name=="school") ? 100 : 0));
       alifenxi.track('提交出错',{
         err_type : name
       });
