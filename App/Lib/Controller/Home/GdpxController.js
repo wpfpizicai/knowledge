@@ -1,8 +1,6 @@
 module.exports = Controller("Home/BaseController", function(){
   "use strict";
-  function checkstate(){
-
-  };
+  var nodeExcel = require('excel-export');
   return {
     indexAction: function(){
       var self = this;
@@ -155,7 +153,141 @@ module.exports = Controller("Home/BaseController", function(){
         title : "日程安排-中国金融高端培训（2015）"
       })
       self.display();
-    }
+    },
 
+    excelAction: function(){
+      var self = this;
+      var conf = {};
+      return self.session('userinfo').then(function(value) {
+        if (isEmpty(value)) {
+          if (self.isAjax()) {
+            return self.error(403);
+          }else{
+            return self.redirect("/login");
+          }
+        }else{
+                conf.cols = [
+        {
+          caption : '姓名',
+          type : 'string',
+          width: 10
+        },{
+          caption : '身份证号码',
+          type : 'string',
+          width: 20
+        },{
+          caption : '性别',
+          type : 'string',
+          width: 5
+        },{
+          caption : '邮箱',
+          type : 'string',
+          width: 20
+        },{
+          caption : '手机号码',
+          type : 'string',
+          width: 13
+        },{
+          caption : '职业',
+          type : 'string',
+          width: 20
+        },{
+          caption : '地址',
+          type : 'string',
+          width: 30
+        },{
+          caption : '邮编',
+          type : 'string',
+          width: 10
+        },{
+          caption : '学历',
+          type : 'string',
+          width: 6
+        },{
+          caption : '学术成果',
+          type : 'string',
+          width: 30
+        },{
+          caption : '是否参加过高端培训',
+          type : 'string',
+          width: 10,
+          beforeCellWrite : function(row,cell){
+            if(!cell){
+              return "未知"
+            }else if(cell="agree"){
+              return "参加过"
+            }else{
+              return "未参加"
+            }
+          }
+        },{
+          caption : '英语水平',
+          type : 'string',
+          width: 30
+        },{
+          caption : '单位',
+          type : 'string',
+          width: 20
+        },{
+          caption : '职务',
+          type : 'string',
+          width: 20
+        },{
+          caption : '研究方向',
+          type : 'string',
+          width: 30
+        },{
+          caption : '工作经历',
+          type : 'string',
+          width: 30
+        },{
+          caption : '学校',
+          type : 'string',
+          width: 15
+        },{
+          caption : '年级',
+          type : 'string',
+          width: 7
+        },{
+          caption : '所学专业',
+          type : 'string',
+          width: 20
+        },{
+          caption : '是否参加座谈会',
+          type : 'string',
+          width: 10,
+          beforeCellWrite : function(row,cell){
+            if(cell =='agree'){
+              return "参加"
+            }else{
+              return "不参加"
+            }
+          }
+        },{
+          caption : '学习经历',
+          type : 'string',
+          width: 30
+        }
+      ];
+      D('ActivityUser').order('atime ASC').select().then(function(data){
+        var arr = [];
+        if(data){
+          var _len = data.length;
+          for (var i = 0; i < _len; i++) {
+            var _row = data[i];
+            arr.push([_row.username,_row.idcardnum,_row.sex,_row.email,_row.mobile,_row.career,_row.address,_row.zipcode,_row.education,_row.result,_row.attend_before,_row.english,_row.unit,_row.career_name,_row.research,_row.work_experience,_row.school,_row.s_class,_row.department,_row.ismeeting,_row.study]);
+          }
+          conf.rows = arr;
+          var result = nodeExcel.execute(conf);
+          self.header({
+            'Content-Type' : 'application/vnd.openxmlformats',
+            'Content-Disposition' : 'attachment; filename=Report.xlsx'
+          })
+          self.end(result,'binary')
+        }
+      })
+        }
+      });
+    }
   };
 })
