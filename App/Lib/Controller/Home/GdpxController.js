@@ -214,7 +214,7 @@ module.exports = Controller("Home/BaseController", function(){
           beforeCellWrite : function(row,cell){
             if(!cell){
               return "未知"
-            }else if(cell="agree"){
+            }else if(cell=="agree"){
               return "参加过"
             }else{
               return "未参加"
