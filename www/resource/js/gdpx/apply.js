@@ -91,6 +91,8 @@ define(function(require,exports,module) {
     }
     $('#submit_btn').on('click',function(e) {
       cansubmit = true;
+      alert("谢谢您的关注，本次活动报名已经截止！")
+      return;
       $('.has-error','#activity_form').removeClass('has-error')
       if(!is_agree){
         $('#textarea_fwtk').parent().addClass('has-error');
